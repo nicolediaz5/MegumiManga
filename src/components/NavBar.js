@@ -1,8 +1,8 @@
-
-import  Container  from "react-bootstrap/Container";
 import  Navbar  from "react-bootstrap/Navbar";
+import  Container  from "react-bootstrap/Container";
+
 import  Nav  from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown"
+import NavDropdown from "react-bootstrap/NavDropdown";
 
  
 
@@ -22,8 +22,8 @@ function NavBar() {
         <NavDropdown.Item href="#action/3.1">Josei</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Kodomo</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Seinen</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Shojo</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Shonen</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.4">Shojo</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.5">Shonen</NavDropdown.Item>
       </NavDropdown>
       
     </Nav>
