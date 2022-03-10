@@ -18,6 +18,7 @@ function NavBar() {
     <Nav className="me-auto">
       <Nav.Link href="#mangas">Mangas</Nav.Link>
       <Nav.Link href="#figuras">Figuras Colecionables</Nav.Link>
+      <Nav.Link href="#figuras">Comics</Nav.Link>
       
     </Nav>
     <Nav>
