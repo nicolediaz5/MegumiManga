@@ -29,7 +29,7 @@ function NavBar() {
     </Nav>
     <Nav>
       <Nav.Link href="#cuenta">Mi cuenta</Nav.Link>
-      <Nav.Link href="#memes">
+      <Nav.Link href="#carrito">
         Mi Carrito
       </Nav.Link>
     </Nav>
