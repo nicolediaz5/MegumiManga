@@ -7,30 +7,6 @@
   pointer-events: none;
 }
 
- /*Nuevos estilos*/
-.styleNav{
-  background-color: rgb(255, 115, 0);
-}
-
-.tituloPag{
-  color: "#ce6402";
-  text-align: "center";
-  text-transform: "uppercase";
-  padding-top: 30px;
-  font-style: "bold";
-  background-color: "#ffffff";
-  margin-top: "150px"
-}
-
-.subPag{
-  color: "#ce6402";
-  text-align: "center";
-  padding-top: 15px;
-  font-style: "bold";
-  background-color: "#ffffff";
-  margin-top: "20px"
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
