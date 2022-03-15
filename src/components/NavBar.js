@@ -3,6 +3,8 @@ import  Container  from "react-bootstrap/Container";
 
 import  Nav  from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import CartWidget from "./CartWidget";
+
 
  
 
@@ -10,7 +12,7 @@ function NavBar() {
   return (
    
   
-    <Navbar collapseOnSelect expand="lg" >
+    <Navbar collapseOnSelect expand="lg" className="styleNav" >
   <Container>
   <Navbar.Brand href="#home">Megumi Manga</Navbar.Brand>
   
@@ -29,8 +31,8 @@ function NavBar() {
     </Nav>
     <Nav>
       <Nav.Link href="#cuenta">Mi cuenta</Nav.Link>
-      <Nav.Link href="#carritodecompras">
-        Mi Carrito
+      <Nav.Link href="#carritodecompras" >
+        <CartWidget /> Mi Carrito
       </Nav.Link>
     </Nav>
   </Navbar.Collapse>
