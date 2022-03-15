@@ -32,7 +32,7 @@ function NavBar() {
     <Nav>
       <Nav.Link href="#cuenta">Mi cuenta</Nav.Link>
       <Nav.Link href="#carritodecompras" >
-        <CartWidget /> Mi Carrito
+      {/*Aca va incrustado el icono del carrito*/}  <CartWidget /> Mi Carrito
       </Nav.Link>
     </Nav>
   </Navbar.Collapse>
