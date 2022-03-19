@@ -28,3 +28,36 @@
     width: 18px;
     height: 18px;
   }
+
+
+  /*Estilo botones*/
+
+  .btn_menos , .btn_mas{
+    background-color: rgb(255, 115, 0);
+    border-color: rgb(255, 115, 0);
+    border-radius: 0.9rem;
+    box-shadow: none;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .contenedor_cantidad {
+    text-align: center;
+  font-size: 50px;
+margin: 10px;
+  color: rgb(255, 115, 0);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .btn_add{
+    background-color: white;
+    border-color: rgb(255, 115, 0);
+    margin-top: 10px;
+    width: 170px;
+    border-radius: 0.9rem;
+    box-shadow: none;
+  }
