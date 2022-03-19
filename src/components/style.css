@@ -44,6 +44,19 @@
     color: white;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
   }
+  .btn_menos:hover {
+    background-color: white;
+    border-color: rgb(255, 115, 0);
+    color: rgb(255, 115, 0);
+  }
+
+
+  .btn_mas:hover {
+    background-color: white;
+    border-color: rgb(255, 115, 0);
+    color: rgb(255, 115, 0);
+  }
+
 
   .contenedor_cantidad {
     text-align: center;
@@ -56,8 +69,16 @@ margin: 10px;
   .btn_add{
     background-color: white;
     border-color: rgb(255, 115, 0);
-    margin-top: 10px;
-    width: 170px;
+    width: 200px;
     border-radius: 0.9rem;
     box-shadow: none;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(255, 115, 0);
+  }
+
+  .btn_add:hover {
+    background-color: rgb(255, 115, 0);
+    border-color: rgb(255, 115, 0);
+    color: white;
   }
