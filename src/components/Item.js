@@ -8,7 +8,7 @@ const Item = ({titulo, precio, picUrl}) => {
  
   return (
 
-<div className="col-md-4">
+<div className="row">
         <div className="card">
           <img src={picUrl} alt="" className="card-img-top"/>
           <div className="card-body">

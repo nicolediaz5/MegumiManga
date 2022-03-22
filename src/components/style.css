@@ -24,7 +24,11 @@
     margin-top: "20px"
   }
 
-  
+  h2{
+    color: rgb(255, 115, 0);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+
   .bi-cart4 {
     width: 18px;
     height: 18px;
@@ -86,13 +90,7 @@ margin: 5px;
     color: white;
   }
 
-  .conteiner {
-    width:100%; 
-    height:100%; 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-  }
+ 
 
   /*Body Mangas*/
   .card{

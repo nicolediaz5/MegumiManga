@@ -42,7 +42,7 @@ task
 
   return (
     <> 
-        { cargando ? <h1>cargando..</h1> : 
+        { cargando ? <h2>Cargando productos...</h2> : 
         mangas.map((prod) => {
             return (
                 <Item  key={prod.id} titulo={prod.titulo} precio={prod.precio} picUrl={prod.picUrl}/>
