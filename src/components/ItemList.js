@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import Item from './Item';
+
+import './style.css'
+
 const mangas = [ 
     {id:`1`, titulo: `Naruto`, precio: 550, picUrl: "https://cdn.normacomics.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/n/a/naruto_cast__1.jpg"},
     {id:`2`, titulo: `Dragon Ball Z`, precio: 770, picUrl: "https://images-na.ssl-images-amazon.com/images/I/91V4lFuTzBL.jpg"},
@@ -38,7 +41,7 @@ task
 }, [])
 console.log(mangas)
   return (
-    <div className='contenedor'>
+    <div className='main'>
         {mangas.map((prod) => {
             return (
                <div key={prod.id}>
