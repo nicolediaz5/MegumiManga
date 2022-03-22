@@ -8,7 +8,7 @@ const Item = ({titulo, precio, picUrl}) => {
  
   return (
 
-<div className="row">
+<div className="col-12 mb-2 col-md-4">
         <div className="card">
           <img src={picUrl} alt="" className="card-img-top"/>
           <div className="card-body">
@@ -19,6 +19,7 @@ const Item = ({titulo, precio, picUrl}) => {
         </div>
       </div>
 
+  
   )
 }
 
