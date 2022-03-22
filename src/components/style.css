@@ -114,3 +114,9 @@ h5{
   font-style: bold;
   color: rgb(255, 115, 0);
 }
+.col-12, .mb-2, .col-md-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px) ;
+  justify-content: center;
+  margin: 40px 20px ;
+}
