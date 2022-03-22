@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import Item from './Item';
 
-import './style.css'
 
 const mangas = [ 
     {id:`1`, titulo: `Naruto`, precio: 550, picUrl: "https://cdn.normacomics.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/n/a/naruto_cast__1.jpg"},
@@ -28,6 +27,7 @@ const mangas = [
  
 function ItemList (){ 
  const [mangas, setMangas] = useState ([])
+ const [cargando, setCargando] = useState (true)
 
    useEffect (() => {
 task
@@ -36,21 +36,21 @@ task
       return resp
     })
     .catch(err => console.log(err))
-    .finally(() => console.log(`siempre ultimo`))
+    .finally(()=> setCargando (false))
     
 }, [])
-console.log(mangas)
+
   return (
-    <div className='main'>
-        {mangas.map((prod) => {
+    <> 
+        { cargando ? <h1>cargando..</h1> : 
+        mangas.map((prod) => {
             return (
-               <div key={prod.id}>
-                <Item titulo={prod.titulo} precio={prod.precio} picUrl={prod.picUrl}/>
-                </div> 
+                <Item  key={prod.id} titulo={prod.titulo} precio={prod.precio} picUrl={prod.picUrl}/>
+                
             )
         }
         )}
-    </div>
+    </>
   )
 }
 
