@@ -7,28 +7,34 @@ const mangas = [
     {id:`4`, titulo: `Sakura Card Captor`, precio: 455, picUrl: "https://images-na.ssl-images-amazon.com/images/I/919mc8QlTYL.jpg"},
     {id:`5`, titulo: `NaNa`, precio: 650, picUrl: "https://images-na.ssl-images-amazon.com/images/I/91IdgmPwo2L.jpg"},
     {id:`6`, titulo: `Given`, precio: 360, picUrl: "https://images-na.ssl-images-amazon.com/images/I/81ZyyhTCsRL.jpg"},
-
-]
-
-const task = new Promise ((resolve, reject) => {
+  
+  ]
+  const task = new Promise ((resolve, reject) => {
     let condition = true 
-    if (condition) {
+    if (condition) { setTimeout(() => {
         resolve(mangas)
+    }, 3000);
+        
+   
     } else {
         reject(`No se encontraron los productos`)
     }
-})
+  });
+  
+ 
+function ItemList (){ 
+    task
+    .then(resp => {
+      console.log(resp)
+      return resp
+    })
+    .catch(err => console.log(err))
+    .finally(() => console.log(`siempre ultimo`))
+    
 
-const ItemList = () => { 
-task
-.then(resp => {
-    return resp
-})
-.catch()
-.then()
 
   return (
-    <div>ItemList</div>
+    <div></div>
   )
 }
 
