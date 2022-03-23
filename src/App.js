@@ -1,4 +1,4 @@
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar';
 import ItemListConteiner from './components/container/ItemListConteiner';
@@ -13,11 +13,14 @@ let subTit= "En Megumi podés confiar para elegir tu primer manga o seguir con l
   
  return (
     <div className="App">
-
+<BrowserRouter>
      <NavBar/> 
-<ItemListConteiner tituloProps= { greeting } subProps= { subTit } />
-      
+     <Routes>
+       <Route path="/"
+        element={<ItemListConteiner tituloProps= { greeting } subProps= { subTit } /> }/>
 
+      </Routes>
+</BrowserRouter>
 
     </div>
   );
