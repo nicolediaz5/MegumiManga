@@ -10,6 +10,7 @@ const mangas = [
     {id:`4`, titulo: `Sakura Card Captor`, precio: 455, picUrl: "https://images-na.ssl-images-amazon.com/images/I/919mc8QlTYL.jpg"},
     {id:`5`, titulo: `NaNa`, precio: 650, picUrl: "https://images-na.ssl-images-amazon.com/images/I/91IdgmPwo2L.jpg"},
     {id:`6`, titulo: `Given`, precio: 360, picUrl: "https://images-na.ssl-images-amazon.com/images/I/81ZyyhTCsRL.jpg"},
+    {id:`6`, titulo: `Given`, precio: 360, picUrl: "https://images-na.ssl-images-amazon.com/images/I/81ZyyhTCsRL.jpg"},
   
   ]
   const task = new Promise ((resolve, reject) => {
@@ -42,7 +43,7 @@ task
 
   return (
     
-    <div > 
+    <> 
         { cargando ? <h2 >Cargando productos...</h2> : 
 
 <div className='contenedor' >
@@ -60,7 +61,7 @@ task
        
         }
 
-    </div>
+    </>
   )
 }
 
