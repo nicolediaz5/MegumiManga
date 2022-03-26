@@ -41,16 +41,26 @@ task
 }, [])
 
   return (
-    <> 
-        { cargando ? <h2>Cargando productos...</h2> : 
-        mangas.map((prod) => {
+    
+    <div > 
+        { cargando ? <h2 >Cargando productos...</h2> : 
+
+<div className='contenedor' >
+ {mangas.map((prod) => {
             return (
                 <Item  key={prod.id} titulo={prod.titulo} precio={prod.precio} picUrl={prod.picUrl}/>
                 
             )
         }
-        )}
-    </>
+
+        )
+      }
+</div>
+        
+       
+        }
+
+    </div>
   )
 }
 

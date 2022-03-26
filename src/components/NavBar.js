@@ -6,6 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "./CartWidget";
 
 import './style.css'
+import { NavLink } from "react-router-dom";
  
 
 function NavBar() {
@@ -14,7 +15,12 @@ function NavBar() {
   
     <Navbar collapseOnSelect expand="lg" className="styleNav" >
   <Container>
-  <Navbar.Brand href="#home">Megumi Manga</Navbar.Brand>
+
+ <Navbar.Brand>
+   <NavLink to="/"><img src="https://i.ibb.co/0mM71v6/Logo1.png" alt="Logo1" border="0" className="logostyle"/> </NavLink>
+   
+ 
+ </Navbar.Brand>
   
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
@@ -31,9 +37,9 @@ function NavBar() {
     </Nav>
     <Nav>
       <Nav.Link href="#cuenta">Mi cuenta</Nav.Link>
-      <Nav.Link href="#carritodecompras" >
-      {/*Aca va incrustado el icono del carrito*/}  <CartWidget /> Mi Carrito
-      </Nav.Link>
+      <NavLink to="/carrito">
+      <CartWidget /> Mi Carrito
+      </NavLink>
     </Nav>
   </Navbar.Collapse>
   </Container>

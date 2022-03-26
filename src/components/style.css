@@ -4,6 +4,11 @@
     background-color: rgb(255, 115, 0);
   }
 
+.logostyle{
+  width: 150px;
+  height: 100px;
+}
+
   .tituloPag{
     color: "#ce6402";
     text-align: "center";
@@ -25,6 +30,7 @@
   }
 
   h2{
+    text-align: center;
     color: rgb(255, 115, 0);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
   }
@@ -110,6 +116,7 @@ p{
 }
 h5{
   text-align: center;
+  
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-style: bold;
   color: rgb(255, 115, 0);
@@ -119,4 +126,12 @@ h5{
   grid-template-columns: repeat(auto-fit, 300px) ;
   justify-content: center;
   margin: 40px 20px ;
+}
+
+.contenedor{
+  display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ align-content: center;
+
 }
