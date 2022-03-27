@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import ItemListConteiner from './components/container/ItemListConteiner';
 
 import './App.css';
+import ItemDetailContainer from "./components/container/ItemDetailContainer";
 
 
 
@@ -16,10 +17,10 @@ let subTit= "En Megumi podés confiar para elegir tu primer manga o seguir con l
 <BrowserRouter>
      <NavBar/> 
      <Routes>
-       <Route path="/"
-        element={<ItemListConteiner tituloProps= { greeting } subProps= { subTit } /> }/>
-
+       <Route path="/" element={<ItemListConteiner tituloProps= { greeting } subProps= { subTit } /> }/>
+<Route path="/detalle" element={<ItemDetailContainer /> }/>
       </Routes>
+      
 </BrowserRouter>
 
     </div>
