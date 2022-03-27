@@ -1,7 +1,7 @@
 import '../style.css'
 
 import React from 'react'
-/*import ItemList from '../ItemList';*/
+import ItemList from '../ItemList';
 import ItemDetailContainer from './ItemDetailContainer';
 
 
@@ -13,7 +13,7 @@ function ItemListConteiner(props) {
 <h6 className='subPag'> {subProps} </h6>
 
 <ItemDetailContainer/>
-{/*<ItemList />*/}
+<ItemList />
 
     </div>
     

@@ -168,10 +168,15 @@ h5{
 }
 
 
-.card-body{
+.card-body2{
   display: flex;
   align-items: center;
   position: relative;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+padding-right: 10px;
+
 }
 
 .imgDetalle{

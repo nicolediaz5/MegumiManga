@@ -8,7 +8,7 @@ import React from 'react'
     <div className="">
       <img src={picUrl} className="imgDetalle" alt="..."/>
     </div>
-    <div className="card-body ">
+    <div className="card-body2 ">
       <div >
         <h5 className="card-title">{titulo}</h5>
         <h6 className="card-subtitle">${precio}</h6>
