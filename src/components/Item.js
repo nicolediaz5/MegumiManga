@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemCount from './ItemCount'
+/*import ItemCount from './ItemCount'*/
 import './style.css'
 
 
@@ -14,7 +14,8 @@ const Item = ({titulo, precio, picUrl}) => {
           <div className="card-body">
             <h5>{titulo} </h5>
             <p>${precio}</p>
-            <ItemCount />
+            <button className=" btn btn_add"> Ver más</button>
+            {/*<ItemCount />*/}
           </div>
         </div>
       </div>

@@ -1,0 +1,24 @@
+import React from 'react'
+
+ const ItemDetail = ({titulo, precio, descrip, picUrl}) => {
+  return (
+    <div className='contenedorDetalle'>
+<div className="card mb-3 cardDetalle ">
+  <div className="">
+    <div className="">
+      <img src={picUrl} className="imgDetalle" alt="..."/>
+    </div>
+    <div className="card-body ">
+      <div >
+        <h5 className="card-title">{titulo}</h5>
+        <h6 className="card-subtitle">${precio}</h6>
+        <p className="card-text">{descrip}</p>
+        <button className="btn btn_add2">Añadir al carrito</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  )
+}
+export default ItemDetail
