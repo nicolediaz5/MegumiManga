@@ -2,7 +2,7 @@ import '../style.css'
 
 import React from 'react'
 import ItemList from '../ItemList';
-import ItemDetailContainer from './ItemDetailContainer';
+/*import ItemDetailContainer from './ItemDetailContainer';*/
 
 
 
@@ -18,7 +18,7 @@ function ItemListConteiner(props) {
 <h1 className='tituloPag'> {tituloProps} </h1>
 <h6 className='subPag'> {subProps} </h6>
 
-<ItemDetailContainer/>
+{/*<ItemDetailContainer/>*/}
 <ItemList />
 
     </div>
