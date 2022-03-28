@@ -24,8 +24,8 @@ function NavBar() {
   
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <NavLink to={"/mangas"}>Mangas</NavLink>
-      <NavLink to={"/figuras"}>Figuras Colecionables</NavLink>
+      <NavLink to={"categoria/shonen"}>Shonen</NavLink>
+      <NavLink to={"categoria/seinen"}>Seinen</NavLink>
       
       
     </Nav>

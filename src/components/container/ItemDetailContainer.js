@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+/*import { useParams } from 'react-router-dom';*/
 import ItemDetail from '../ItemDetail'
 
 const mangaDetalle = [
@@ -25,19 +26,21 @@ const task = new Promise ((resolve, reject) => {
 
 
 function ItemDetailContainer (){ 
+ /* const { detalleId } = useParams ()*/
+
 const [mangaDetalle, setDetalle] = useState ({})
 const [cargando, setCargando] = useState (true)
 
  useEffect (() => {
 task
   .then(resp => {
-      setDetalle(resp.find(detail => detail.id === "1"))
+      setDetalle(resp.find(detail => detail.id === "1" /*detalleId*/))
     return resp
   })
   .catch(err => console.log(err))
   .finally(()=> setCargando (false))
   
-}, [])
+}, [/*detalleId*/])
 
 return (
   
