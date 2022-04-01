@@ -38,7 +38,7 @@ const [mangaDetalle, setDetalle] = useState ({})
 task
   .then(resp => {
       setDetalle(resp.find(mangaDetalle => mangaDetalle.titulo === detalleId))
-    /*return resp*/
+    
   })
   .catch(err => console.log(err))
   .finally()

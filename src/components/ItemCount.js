@@ -2,6 +2,23 @@
 import React from 'react'
 
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+
+
+const ButtonFinish = () => {
+  return (
+    <Link to={"/carrito"}>
+      <button className=" btn btn_finish"  onClick={() => (console.log("producto en el carrito")) }>Terminar compra</button>
+    </Link>
+  )
+}
+
+const ButtonAdd = ({onAdd}) =>{
+return (
+<button className=" btn btn_add"  onClick={onAdd}>Añadir al carrito</button>
+)
+}
+
 
 const ItemCount = () => {
     const count = 1;
@@ -14,8 +31,10 @@ const ItemCount = () => {
         setCantidad(cantidad + numero);
     };
 
-    const onAdd = (cantidad) => {
-      alert (`Tenes ${cantidad} productos`)
+const [inputFinish, setFinish] = useState ("add")
+
+    const onAdd = () => {
+      setFinish("finish")
     }
 
   return (
@@ -26,7 +45,15 @@ const ItemCount = () => {
   <button className='btn btn_menos' onClick={() => añadirProducto(-1)} disabled={cantidad === count ? true : null}>-</button>
 
   <br/>  
-  <button className=" btn btn_add"  onClick={() => onAdd(cantidad)} disabled={stock === 0 ? true : null}>Añadir</button>
+
+{
+  inputFinish === "add" ? 
+   <ButtonAdd onAdd={onAdd} /> 
+   : 
+   <ButtonFinish />
+
+}
+  {/*<button className=" btn btn_add"  onClick={() => onAdd(cantidad)} disabled={stock === 0 ? true : null}>Añadir al carrito</button>*/}
   
 
 
