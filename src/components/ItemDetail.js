@@ -18,7 +18,7 @@ return (
         <h5 className="card-title">{titulo}</h5>
         <h6 className="card-subtitle">${precio}</h6>
         <p className="card-text">{descrip}</p>
-        <ItemCount />
+        <ItemCount /> 
       </div>
     </div>
   </div>

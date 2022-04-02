@@ -16,7 +16,7 @@ let subTit= "En Megumi podés confiar para elegir tu primer manga o seguir con l
  return (
     <div className="App">
 <BrowserRouter>
- 
+  
      <NavBar/> 
      <Routes>
      <Route path="/" element={<ItemListConteiner tituloProps= { greeting } subProps= { subTit } /> }/>
