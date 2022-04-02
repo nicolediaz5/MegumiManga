@@ -9,14 +9,14 @@ import { Link} from 'react-router-dom'
 const ButtonFinish = () => {
   return (
     <Link to={"/cart"} >
-      <button className=" btn btn_finish"  onClick={() => (console.log("producto en el carrito")) }>Terminar compra</button>
+      <button className=" btn btn_finish" onClick={() => (console.log("producto en el carrito")) }>Terminar compra</button>
     </Link>
   )
 }
 
 const ButtonAdd = ({onAdd}) =>{
 return (
-<button className=" btn btn_add"  onClick={onAdd}>Añadir al carrito</button>
+<button className=" btn btn_add" onClick={onAdd}>Añadir al carrito</button>
 )
 }
 
@@ -54,10 +54,6 @@ const [inputFinish, setFinish] = useState ("add")
    <ButtonFinish />
 
 }
-  {/*<button className=" btn btn_add"  onClick={() => onAdd(cantidad)} disabled={stock === 0 ? true : null}>Añadir al carrito</button>*/}
-  
-
-
 </div>
   )
 }

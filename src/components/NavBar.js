@@ -34,7 +34,7 @@ function NavBar() {
     <Nav>
       <Nav.Link href="#cuenta">Mi cuenta</Nav.Link>
       <NavLink to={"/cart"}> 
-      <CartWidget /> Mi Carrito
+       <CartWidget />Mi Carrito
       </NavLink>
     </Nav>
   </Navbar.Collapse>
