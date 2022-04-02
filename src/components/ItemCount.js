@@ -2,12 +2,13 @@
 import React from 'react'
 
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
+
 
 
 const ButtonFinish = () => {
   return (
-    <Link to={"/carrito"}>
+    <Link to={"/cart"} >
       <button className=" btn btn_finish"  onClick={() => (console.log("producto en el carrito")) }>Terminar compra</button>
     </Link>
   )

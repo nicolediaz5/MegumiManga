@@ -8,6 +8,7 @@ import CartWidget from "./CartWidget";
 import './style.css'
 import { NavLink } from "react-router-dom";
 
+
  
 
 function NavBar() {
@@ -32,7 +33,7 @@ function NavBar() {
     </Nav>
     <Nav>
       <Nav.Link href="#cuenta">Mi cuenta</Nav.Link>
-      <NavLink to={"/carrito"} > 
+      <NavLink to={"/cart"}> 
       <CartWidget /> Mi Carrito
       </NavLink>
     </Nav>
