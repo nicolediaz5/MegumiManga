@@ -5,7 +5,8 @@ import ItemListConteiner from './components/container/ItemListConteiner';
 
 import './App.css';
 import ItemDetailContainer from "./components/container/ItemDetailContainer";
-import CartContexProvider from "./context/CartContext";
+import CartContextProvider from "./context/CartContext";
+import Cart from "./components/Cart";
 
 
 
@@ -17,14 +18,21 @@ let subTit= "En Megumi podés confiar para elegir tu primer manga o seguir con l
  return (
     <div className="App">
 <BrowserRouter>
-  <CartContexProvider>
-     <NavBar/> 
+
+<CartContextProvider>
+
+     <NavBar/>
+     
      <Routes>
      <Route path="/" element={<ItemListConteiner tituloProps= { greeting } subProps= { subTit } /> }/>
        <Route path="/categoria/:categoriaId" element={<ItemListConteiner tituloProps= { greeting } subProps= { subTit } /> }/>
 <Route path="/detalle/:detalleId" element={<ItemDetailContainer /> }/>
+
+<Route path="/cart" element={ <Cart />}/>
       </Routes>
-   </CartContexProvider>
+
+</CartContextProvider>
+
 </BrowserRouter>
 
     </div>

@@ -7,6 +7,7 @@ import CartWidget from "./CartWidget";
 
 import './style.css'
 import { NavLink } from "react-router-dom";
+import Cart from "./Cart";
 
 
  
@@ -33,8 +34,10 @@ function NavBar() {
     </Nav>
     <Nav>
       <Nav.Link href="#cuenta">Mi cuenta</Nav.Link>
-      <NavLink to={"/cart"}> 
+      <NavLink to={"/cart"} element={<Cart /> }>
+        
        <CartWidget />Mi Carrito
+       
       </NavLink>
     </Nav>
   </Navbar.Collapse>

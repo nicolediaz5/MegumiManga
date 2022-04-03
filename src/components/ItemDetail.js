@@ -1,11 +1,20 @@
-import React from 'react'
 
+
+import { useCartContext } from '../context/CartContext'
 import ItemCount from './ItemCount'
 
 
 
  const ItemDetail = ({titulo, precio, descrip, picUrl}) => {
 
+const {addToCart, cartList} = useCartContext()
+
+  function onAdd(cantidad) {
+    console.log(cantidad)
+    addToCart({titulo, precio, descrip, picUrl, cantidad: cantidad})
+    
+  }
+console.log(cartList)
 return (
     <div className='contenedorDetalle'>
 <div className="card mb-3 cardDetalle ">
@@ -18,7 +27,7 @@ return (
         <h5 className="card-title">{titulo}</h5>
         <h6 className="card-subtitle">${precio}</h6>
         <p className="card-text">{descrip}</p>
-        <ItemCount /> 
+        <ItemCount count={1} stock={10} onAdd={onAdd} /> 
       </div>
     </div>
   </div>

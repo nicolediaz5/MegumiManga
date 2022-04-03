@@ -34,6 +34,8 @@ const ItemCount = () => {
 
 const [inputFinish, setFinish] = useState ("add")
 
+
+
     const onAdd = () => {
       setFinish("finish")
     }
