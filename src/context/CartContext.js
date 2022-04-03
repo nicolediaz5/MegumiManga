@@ -3,11 +3,13 @@ import  { createContext } from 'react'
  export const CartContext = createContext([])
 
 
- /*function CartContext() {
-  return (
-    <div>
+function CartContexProvider ({childer}){ // componente
+return (
+    <CartContexProvider value= {{}}> 
 
-    </div>
-  )
+    {childer}
+    </CartContexProvider>
+    
+)
 }
-export default CartContext*/
+export default CartContexProvider 
