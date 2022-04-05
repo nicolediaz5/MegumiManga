@@ -1,15 +1,18 @@
 
-import React from 'react'
+
 
 import { useState } from 'react'
 import { Link} from 'react-router-dom'
+import { useCartContext } from '../context/CartContext'
+
+
 
 
 
 const ButtonFinish = () => {
   return (
     <Link to={"/cart"} >
-      <button className=" btn btn_finish" onClick={() => (console.log("producto en el carrito")) }>Terminar compra</button>
+      <button className=" btn btn_finish" onClick={() => {(console.log("producto en el carrito"))} }>Terminar compra</button>
     </Link>
   )
 }
@@ -21,7 +24,7 @@ return (
 }
 
 
-const ItemCount = () => {
+const ItemCount = (mangaDetalle) => {
     const count = 1;
     const stock = 10;
     
@@ -35,9 +38,12 @@ const ItemCount = () => {
 const [inputFinish, setFinish] = useState ("add")
 
 
-
-    const onAdd = () => {
+const { addToCart} = useCartContext()
+    
+const onAdd = () => {
       setFinish("finish")
+      addToCart(mangaDetalle)
+      
     }
 
   return (
@@ -48,12 +54,12 @@ const [inputFinish, setFinish] = useState ("add")
   <button className='btn btn_menos' onClick={() => añadirProducto(-1)} disabled={cantidad === count ? true : null}>-</button>
 
   <br/>  
-
+  
 {
   inputFinish === "add" ? 
    <ButtonAdd onAdd={onAdd} /> 
    : 
-   <ButtonFinish />
+   <ButtonFinish  />
 
 }
 </div>

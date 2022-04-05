@@ -5,18 +5,18 @@ import { Link } from 'react-router-dom'
 import './style.css'
 
 
-const Item = ({titulo, precio, picUrl}) => {
+const Item = (mangas) => {
 
  
   return (
 
 <div >
         <div className="card">
-          <img src={picUrl} alt="" className="card-img-top"/>
+          <img src={mangas.picUrl} alt="" className="card-img-top"/>
           <div className="card-body">
-            <h5>{titulo} </h5>
-            <p>${precio}</p>
-            <Link to={`/detalle/${titulo}`}>
+            <h5>{mangas.titulo} </h5>
+            <p>${mangas.precio}</p>
+            <Link to={`/detalle/${mangas.titulo}`}>
             <button className=" btn btn_add"> Ver más</button>
             </Link>
            

@@ -3,13 +3,13 @@ import { useCartContext } from '../context/CartContext'
 
 function Cart() {
 
-const {cartList} = useCartContext ()
+const {cartList, removeCart} = useCartContext ()
     
   return (
     <div>
 <h1>Carrito</h1>
-         {cartList.map(prod => <li key={prod.id}> nombre : {prod.titulo}</li>)}
-
+         {cartList.map(item => <h2 key={item.id} > {item.titulo} </h2>)}
+<button className='btn btn_add' onClick={removeCart}> Vaciar carrito</button>
     </div>
   )
 }

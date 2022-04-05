@@ -26,10 +26,11 @@ const task = new Promise ((resolve, reject) => {
 
 
 function ItemDetailContainer (){ 
- const { detalleId } = useParams ()
+
 
 const [mangaDetalle, setDetalle] = useState ({})
-
+const [cargando, setCargando] = useState (true)
+ const { detalleId } = useParams ()
 
  useEffect (() => {
    if(detalleId){
@@ -41,7 +42,7 @@ task
     
   })
   .catch(err => console.log(err))
-  .finally()
+  .finally(()=> setCargando (false))
  } 
 }, [detalleId])
 
@@ -49,13 +50,13 @@ return (
   
   <> 
           
-
+{ cargando ?    <h2 >Cargando detalles...</h2> :
 <>
 
               <ItemDetail titulo={mangaDetalle.titulo} picUrl={mangaDetalle.picUrl} descrip={mangaDetalle.descrip} precio={mangaDetalle.precio}    />
       
 </>
-      
+   }  
      
       
   </>
