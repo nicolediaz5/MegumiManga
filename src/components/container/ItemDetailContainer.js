@@ -53,7 +53,11 @@ return (
 { cargando ?    <h2 >Cargando detalles...</h2> :
 <>
 
-              <ItemDetail titulo={mangaDetalle.titulo} picUrl={mangaDetalle.picUrl} descrip={mangaDetalle.descrip} precio={mangaDetalle.precio}    />
+              <ItemDetail titulo={mangaDetalle.titulo} 
+              picUrl={mangaDetalle.picUrl} 
+              descrip={mangaDetalle.descrip} 
+              precio={mangaDetalle.precio}  
+              id={mangaDetalle.id}  />
       
 </>
    }  
