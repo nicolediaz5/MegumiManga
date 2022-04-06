@@ -48,13 +48,12 @@ const onAdd = () => {
 
   return (
     <div className='d-grid gap-2 d-md-block'>
-
-  <button className='btn btn_mas' onClick={() => añadirProducto(+1)} disabled={cantidad === stock ? true : null} >+</button>
+    
+ <button className='btn btn_mas' onClick={() => añadirProducto(+1)} disabled={cantidad === stock ? true : null} >+</button>
   <span className='btn contenedor_cantidad'>{cantidad}</span>
   <button className='btn btn_menos' onClick={() => añadirProducto(-1)} disabled={cantidad === count ? true : null}>-</button>
-
   <br/>  
-  
+
 {
   inputFinish === "add" ? 
    <ButtonAdd onAdd={onAdd} /> 

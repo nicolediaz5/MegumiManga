@@ -10,9 +10,11 @@ import { NavLink } from "react-router-dom";
 import Cart from "./Cart";
 
 
+
  
 
 function NavBar() {
+  
   return (
    
   
@@ -36,7 +38,7 @@ function NavBar() {
       <Nav.Link href="#cuenta">Mi cuenta</Nav.Link>
       <NavLink to={"/cart"} element={<Cart /> }>
         
-       <CartWidget />Mi Carrito
+       <CartWidget />
        
       </NavLink>
     </Nav>
