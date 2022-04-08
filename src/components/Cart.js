@@ -4,7 +4,7 @@ import './cartstyle.css'
 
 function Cart() {
 
-const {cartList, onAdd, removeCart, removeCartItem} = useCartContext ()
+const {cartList, addToCart, removeCart, removeCartItem} = useCartContext ()
     
 
 
@@ -21,7 +21,7 @@ return (
             <button onClick={removeCartItem} className="remove">
               -
             </button>{' '}
-            <button onClick={ onAdd} className="add">
+            <button onClick={ addToCart}  className="add">
               +
             </button>
           </div>

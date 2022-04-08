@@ -12,35 +12,36 @@ const [cartList, setCartList] = useState([]) // estado del carrito
 
 
 
-
+/*
 const addToCart = (mangaDetalle) => {
-    const existeProd = cartList.find(prod => prod.mangaDetalle.id === mangaDetalle.id)
-    if (existeProd) {
-        setCartList(cartList.map(prod => prod.mangaDetalle.id === mangaDetalle.id ? {...existeProd, count: existeProd.count + 1} : prod))
+    const existeProd = cartList.find(prod => prod.id === mangaDetalle.id) // para ver si existe el producto chequeamos que tengan el mismo id...
+    if (existeProd) { // ...si el producto existe tengo que aumentar su cantidad
+        setCartList(cartList.map(prod => prod.id === mangaDetalle.id ? {...existeProd, count: existeProd.count + 1} : prod)) //los prodcutos quedan igual salvo el que tiene el mismo id que lo tengo que aumentar en cantidad
     } else {
-        setCartList([...cartList, {...mangaDetalle, count: 1}])
+        setCartList([...cartList, {...mangaDetalle, count: 1}]) // si el prodcuto no existe lo agrego
     }
 }
+*/
 /*
 const removeCartItem = (mangaDetalle) => {
-const existeProd = cartList.find((prod) => prod.mangaDetalle.id === mangaDetalle.id) // en el carrito buscamos un producto que tenga el id
+const existeProd = cartList.find((prod) => prod.id === mangaDetalle.id) // en el carrito buscamos un producto que tenga el id
 if (existeProd.count === 1) { //la cantidad es uno y el usuario quiero eliminar el producto
-setCartList(cartList.filter((prod) => prod.mangaDetalle.id  !== mangaDetalle.id))
+setCartList(cartList.filter((prod) => prod.id  !== mangaDetalle.id))
 } else { // si la cantidad es mas de 2-3-4  y el usuario quiero bajarla a 1 
-     setCartList(cartList.map(prod => prod.mangaDetalle.id === mangaDetalle.id ? {...existeProd, count: existeProd.count - 1} : prod))
+     setCartList(cartList.map(prod => prod.id === mangaDetalle.id ? {...existeProd, count: existeProd.count - 1} : prod))
 }
 }
-
 */
 
-/*
+
+
 const addToCart = (mangaDetalle) => {
     setCartList([
         ...cartList,
         mangaDetalle
     ])
 }
-*/
+
 
 const removeCart = () => {
     setCartList([])
