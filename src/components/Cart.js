@@ -1,6 +1,8 @@
 import React from 'react'
+
 import { useCartContext } from '../context/CartContext'
 import './cartstyle.css'
+
 
 function Cart() {
 
@@ -12,7 +14,7 @@ return (
   <div className="block col-1">
     <h2>Mi Carrito</h2>
     <div>
-      {cartList.length === 0 && <div>Carrito vacio... ¡Comience a comprar!</div>}
+      {cartList.length === 0 && <div>Carrito vacio... ¡Comience a comprar! </div>} 
        
       {cartList.map((item) => (
         <div key={item.mangaDetalle.id} className="row">
