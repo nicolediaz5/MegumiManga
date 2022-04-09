@@ -42,18 +42,20 @@ button {
   padding: 0.2rem;
   margin: 0.1rem;
   border-radius: 0.5rem;
-  border: 0.1rem #404040 solid;
-  background-color: #f0c040;
+  border: 0.1rem white;
+  
   width: 100%;
   cursor: pointer;
 }
 button.add {
-  background-color: #40c0f0;
+  background-color: #276b30;
   width: 1.5rem;
+  color: white;
 }
 button.remove {
-  background-color: #f04040;
+  background-color: rgb(255, 115, 0);
   width: 1.5rem;
+  color: white;
 }
 button.badge {
   background-color: #276b30;

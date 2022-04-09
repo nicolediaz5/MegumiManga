@@ -56,9 +56,9 @@ const onAdd = () => {
 
 {
   inputFinish === "add" ? 
-   <ButtonAdd onAdd={onAdd} /> 
+   <ButtonAdd  onAdd={onAdd}/> 
    : 
-   <ButtonFinish  />
+   <ButtonFinish   />
 
 }
 </div>

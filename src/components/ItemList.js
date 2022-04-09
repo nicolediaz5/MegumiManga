@@ -35,6 +35,17 @@ function ItemList (){
 
  const { categoriaId } = useParams ()
 
+ /*
+ const [producto, setProducto] = useState ({})
+ useEffect (() => {
+const querydb = getFirestore()
+const queryProd = doc(querydb, 'productos','DygahGn1ZrvaOLE9MDJT')
+
+getDoc(queryProd)
+.then(resp => setPorducto( {id: resp.id, ...resp.data() } ))
+ },[])
+ 
+ */
 
    useEffect (() => {
 if( categoriaId) {
