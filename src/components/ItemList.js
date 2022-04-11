@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Item from './Item';
-
+/*import { query, collection, getDocs, getFirestore, where} from "firebase/firestore"*/
 
 const mangas = [ 
     {id:`1`, titulo: `Naruto`, categoria: "shonen", precio: 550, picUrl: "https://cdn.normacomics.com/media/catalog/product/cache/1/thumbnail/9df78eab33525d08d6e5fb8d27136e95/n/a/naruto_cast__1.jpg"},
@@ -14,6 +14,7 @@ const mangas = [
    
   
   ]
+  
   const task = new Promise ((resolve, reject) => {
     let condition = true 
     if (condition) { setTimeout(() => {
@@ -25,27 +26,43 @@ const mangas = [
         reject(`No se encontraron los productos`)
     }
   });
-  
+
  
 function ItemList (){ 
 
  
- const [mangas, setMangas] = useState ([])
+const [mangas, setMangas] = useState ([])
+
  const [cargando, setCargando] = useState (true)
 
  const { categoriaId } = useParams ()
 
- /*
- const [producto, setProducto] = useState ({})
+
+ /* const [productos, setProductos] = useState ([])*/
+/*
  useEffect (() => {
 const querydb = getFirestore()
-const queryProd = doc(querydb, 'productos','DygahGn1ZrvaOLE9MDJT')
 
-getDoc(queryProd)
-.then(resp => setPorducto( {id: resp.id, ...resp.data() } ))
- },[])
- 
- */
+const queryCollection = collection(querydb, 'productos')
+if (categoriaId){
+const queryFilter = query (queryCollection, where('categoria', '==', categoriaId))
+
+getDocs(queryFilter)
+.then(resp => setProductos(resp.docs.map(item => ({ id: item.id, ...item.data() }) ) ) )
+.catch(err => console.log(err))
+.finally(()=> setCargando (false))
+} 
+else {
+getDocs(queryCollection)
+.then(resp => setProductos(resp.docs.map(item => ({ id: item.id, ...item.data() }) ) ) )
+.catch(err => console.log(err))
+.finally(()=> setCargando (false))
+}}
+,[categoriaId])
+
+console.log(productos)
+*/
+
 
    useEffect (() => {
 if( categoriaId) {

@@ -1,3 +1,4 @@
+/*import { doc, getDoc, getFirestore} from 'firebase/firestore';*/
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail'
@@ -27,10 +28,25 @@ const task = new Promise ((resolve, reject) => {
 
 function ItemDetailContainer (){ 
 
-
+/*const [detalle, setDetalle] = useState ({})*/
 const [mangaDetalle, setDetalle] = useState ({})
 const [cargando, setCargando] = useState (true)
+
  const { detalleId } = useParams ()
+
+/*
+ useEffect(() =>{
+  const querydb = getFirestore()
+  const queryProd = doc( querydb, 'productos', detalleId )
+
+  getDoc(queryProd)
+  .then(resp => setDetalle( { id:resp.id, ...resp.data()} ))
+  .catch((err) => console.log(err))
+  .finally(() => setCargando(false))
+},[detalleId])
+ 
+  
+console.log (detalle) */
 
  useEffect (() => {
    if(detalleId){

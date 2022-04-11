@@ -23,7 +23,7 @@ return (
         <div key={item.mangaDetalle.id} className="row">
           <div className="col-2">{item.mangaDetalle.titulo}</div>
           <div className="col-2">
-            <button onClick={ removeCartItem(item.id)} className="remove"> {/*lei mal la consigna y pense que habia que poner para eliminar y agregar item*/}
+            <button onClick={ removeCartItem} className="remove"> {/*lei mal la consigna y pense que habia que poner para eliminar y agregar item*/}
               -
             </button>{' '}
             <button onClick={ addToCart}  className="add">

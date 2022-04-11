@@ -8,10 +8,6 @@ import ItemList from '../ItemList';
 
 function ItemListConteiner(props) {
 
-
-
-  
-
     const {tituloProps, subProps} = props
   return (
     <div className="saludo">
