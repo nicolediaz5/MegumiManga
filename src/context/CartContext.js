@@ -30,7 +30,7 @@ const addToCart = (mangaDetalle) => {
         setCartList([...cartList, {...mangaDetalle, count: 1}]) // si el prodcuto no existe lo agrego
     }
 }*/
-
+/*
 const removeCartItem = (mangaDetalle) => {
 const existeProd = cartList.find((prod) => prod.id === mangaDetalle.id) // en el carrito buscamos un producto que tenga el id
 if (existeProd.count === 1) { //la cantidad es uno y el usuario quiero eliminar el producto
@@ -39,6 +39,12 @@ setCartList(cartList.filter((prod) => prod.id  !== mangaDetalle.id))
      setCartList(cartList.map(prod => prod.id === mangaDetalle.id ? {...existeProd, count: existeProd.count - 1} : prod))
 }
 }
+*/
+
+const removeCartItem = (mangaDetalle) => {
+   setCartList(cartList.filter(p => p.id !== mangaDetalle.id)) 
+} 
+
 
 
 
@@ -56,12 +62,22 @@ const removeCart = () => {
     
 }
 
+
+const precioTotal = () => {
+    return cartList.reduce((acum, p) => acum + ( p.count * p.precio), 0)
+}
+
+
+
 return (
     <CartContext.Provider value= {{
         cartList,
         addToCart,
         removeCart,
-        removeCartItem
+        /*removeCartItem*/
+        removeCartItem,
+        precioTotal
+
     }}> 
 
     {children}

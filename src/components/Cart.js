@@ -7,7 +7,7 @@ import './cartstyle.css'
 
 function Cart() {
 
-const {cartList, addToCart, removeCart, removeCartItem} = useCartContext ()
+const {cartList, addToCart, removeCart, removeCartItem, precioTotal} = useCartContext ()
  
 /*
 const precioProds=  cartList.reduce((acc, c) => acc + c.item.count * c.item.precio, 0) 
@@ -26,7 +26,7 @@ return (
             <button onClick={ removeCartItem} className="remove"> {/*lei mal la consigna y pense que habia que poner para eliminar y agregar item*/}
               -
             </button>{' '}
-            <button onClick={addToCart}  className="add">
+            <button onClick={ addToCart }  className="add">
               +
             </button>
           </div>
@@ -46,7 +46,7 @@ return (
               <strong>Total</strong>
             </div>
             <div key={item.id} className="col-1 text-right">
-              <strong >${item.count * item.precio}</strong> 
+              ${precioTotal() !== 0 && <strong >{precioTotal()}</strong> }
             </div>
           </div>
           <hr />
