@@ -17,15 +17,15 @@ const ButtonFinish = () => {
   )
 }
 
-const ButtonAdd = ({onAdd}) =>{
+const ButtonAdd = ({addItem}) =>{
 return (
-<button className=" btn btn_add" onClick={onAdd}>Añadir al carrito</button>
+<button className=" btn btn_add" onClick={addItem}>Añadir al carrito</button>
 )
 }
 
 
-const ItemCount = (mangaDetalle) => {
-    const count = 1;
+const ItemCount = ({mangaDetalle, count, onAdd}) => {
+    //const count = 1;
     const stock = 10;
     
     const [cantidad, setCantidad] = useState (count);
@@ -40,11 +40,15 @@ const [inputFinish, setFinish] = useState ("add")
 
 const { addToCart} = useCartContext()
     
-const onAdd = () => {
+const addItem = () => {
       setFinish("finish")
       addToCart(mangaDetalle)
-      
+      onAdd(cantidad)
     }
+
+
+
+    
 
   return (
     <div className='d-grid gap-2 d-md-block'>
@@ -56,7 +60,7 @@ const onAdd = () => {
 
 {
   inputFinish === "add" ? 
-   <ButtonAdd  onAdd={onAdd}/> 
+   <ButtonAdd  addItem={addItem} onAdd={onAdd}/> 
    : 
    <ButtonFinish   />
 

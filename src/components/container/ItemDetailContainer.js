@@ -1,8 +1,8 @@
-/*import { doc, getDoc, getFirestore} from 'firebase/firestore';*/
+import { doc, getDoc, getFirestore} from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail'
-
+ /*
 const mangaDetalle = [
     {id:`1`, titulo: `Naruto`, precio: 550, descrip: "Todos han cumplido fielmente su misión: los kages presentes y pasados, Obito y el Equipo Siete ¡He aquí el dramático desenlace de la espectacular historia de Naruto!", picUrl: "https://ramenparados.com/wp-content/uploads/2016/03/naruto72-1000x600-1457438662.jpg"},
     {id:`2`, titulo: `Dragon Ball Z`, precio: 770, descrip: "Kakarotto abandona su planeta porque es atacado por un enemigo. Lo adoptan y lo nombran como Goku. Empezará a luchar en artes marciales  para intentar conseguir las 7 esferas de dragón.", picUrl: "https://as01.epimg.net/meristation/imagenes/2021/11/19/noticias/1637335232_173218_1637335678_noticia_normal.jpg"},
@@ -25,16 +25,22 @@ const task = new Promise ((resolve, reject) => {
   }
 });
 
+*/
+
+
 
 function ItemDetailContainer (){ 
+/*const [mangaDetalle, setDetalle] = useState ({})*/
 
-/*const [detalle, setDetalle] = useState ({})*/
-const [mangaDetalle, setDetalle] = useState ({})
+
+const [producto, setDetalle] = useState ({})
+
 const [cargando, setCargando] = useState (true)
+
 
  const { detalleId } = useParams ()
 
-/*
+
  useEffect(() =>{
   const querydb = getFirestore()
   const queryProd = doc( querydb, 'productos', detalleId )
@@ -46,8 +52,9 @@ const [cargando, setCargando] = useState (true)
 },[detalleId])
  
   
-console.log (detalle) */
+console.log (producto) 
 
+/*
  useEffect (() => {
    if(detalleId){
 
@@ -61,6 +68,7 @@ task
   .finally(()=> setCargando (false))
  } 
 }, [detalleId])
+*/
 
 return (
   
@@ -69,13 +77,20 @@ return (
 { cargando ?    <h2 >Cargando detalles...</h2> :
 <>
 
-              <ItemDetail titulo={mangaDetalle.titulo} 
+              <ItemDetail producto={producto} titulo={producto.titulo} 
+              picUrl={producto.picUrl} 
+              descrip={producto.descrip} 
+              precio={producto.precio}  
+              id={producto.id} />
+
+              {/*<ItemDetail producto={producto} titulo={mangaDetalle.titulo} 
               picUrl={mangaDetalle.picUrl} 
               descrip={mangaDetalle.descrip} 
               precio={mangaDetalle.precio}  
-              id={mangaDetalle.id}  />
+              id={mangaDetalle.id}  />*/}
       
 </>
+
    }  
      
       

@@ -5,7 +5,7 @@ import ItemCount from './ItemCount'
 
 
 
- const ItemDetail = (mangaDetalle) => {
+ const ItemDetail = (mangaDetalle, addItem) => {
 
 const {addToCart, cartList} = useCartContext()
 
@@ -33,7 +33,7 @@ return (
         <h6 className="card-subtitle">${mangaDetalle.precio}</h6>
         <p className="card-text">{mangaDetalle.descrip}</p>
 
-        <ItemCount count={1} stock={10} onAdd={onAdd} addToCart={addToCart} mangaDetalle={mangaDetalle}/> 
+        <ItemCount count={1} stock={10} onAdd={onAdd} addToCart={addToCart} mangaDetalle={mangaDetalle} addItem={addItem} /> 
         
       </div>
     </div>
