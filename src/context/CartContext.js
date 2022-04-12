@@ -21,15 +21,7 @@ const addToCart = (mangaDetalle) => {
     }
    
     }
-/*
-const addToCart = (mangaDetalle) => {
-    const existeProd = cartList.find(prod => prod.id === mangaDetalle.id) // para ver si existe el producto chequeamos que tengan el mismo id...
-    if (existeProd) { // ...si el producto existe tengo que aumentar su cantidad
-        setCartList(cartList.map(prod => prod.id === mangaDetalle.id ? {...existeProd, count: existeProd.count + 1} : prod)) //los prodcutos quedan igual salvo el que tiene el mismo id que lo tengo que aumentar en cantidad
-    } else {
-        setCartList([...cartList, {...mangaDetalle, count: 1}]) // si el prodcuto no existe lo agrego
-    }
-}*/
+
 /*
 const removeCartItem = (mangaDetalle) => {
 const existeProd = cartList.find((prod) => prod.id === mangaDetalle.id) // en el carrito buscamos un producto que tenga el id
