@@ -7,7 +7,7 @@ import ItemCount from './ItemCount'
 
  const ItemDetail = (mangaDetalle, addItem) => {
 
-const {addToCart, cartList} = useCartContext()
+const {addToCart } = useCartContext()
 
   function onAdd(cantidad) {
     
@@ -15,7 +15,7 @@ const {addToCart, cartList} = useCartContext()
     
   }
 
-console.log(cartList)
+
 
 
 return (

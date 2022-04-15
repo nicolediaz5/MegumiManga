@@ -22,22 +22,16 @@ const addToCart = (mangaDetalle) => {
    
     }
 
-/*
-const removeCartItem = (mangaDetalle) => {
-const existeProd = cartList.find((prod) => prod.id === mangaDetalle.id) // en el carrito buscamos un producto que tenga el id
-if (existeProd.count === 1) { //la cantidad es uno y el usuario quiero eliminar el producto
-setCartList(cartList.filter((prod) => prod.id  !== mangaDetalle.id))
-} else { // si la cantidad es mas de 2-3-4  y el usuario quiero bajarla a 1 
-     setCartList(cartList.map(prod => prod.id === mangaDetalle.id ? {...existeProd, count: existeProd.count - 1} : prod))
-}
-}
-*/
 
-const removeCartItem = (mangaDetalle) => {
-   setCartList(cartList.filter(p => p.id !== mangaDetalle.id)) 
+const removerItem = (id) => {
+   setCartList(cartList.filter(p => p.id !== id)) 
 } 
 
 
+
+const cantTotalItem = () => {
+    return cartList.reduce ((acum, p) => acum += p.count, 0)
+}
 
 
 /*
@@ -66,9 +60,9 @@ return (
         cartList,
         addToCart,
         removeCart,
-        /*removeCartItem*/
-        removeCartItem,
-        precioTotal
+        removerItem,
+        precioTotal,
+        cantTotalItem
 
     }}> 
 
