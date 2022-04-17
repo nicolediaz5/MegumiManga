@@ -217,3 +217,15 @@ padding-right: 10px;
   border-color: rgb(255, 115, 0);
   color: rgb(255, 115, 0);
 }
+
+.btn_seguir{
+  background-color: white;
+    border-color: rgb(255, 115, 0);
+    width: 180px;
+    height: 35px;
+    border-radius: 0.9rem;
+    box-shadow: none;
+    text-align: center;
+    font-size: 15px;
+    color: rgb(255, 115, 0);
+}

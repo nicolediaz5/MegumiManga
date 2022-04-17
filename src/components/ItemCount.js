@@ -11,9 +11,14 @@ import { useCartContext } from '../context/CartContext'
 
 const ButtonFinish = () => {
   return (
+    <> 
     <Link to={"/cart"} >
       <button className=" btn btn_finish" onClick={() => {(console.log("producto en el carrito"))} }>Terminar compra</button>
     </Link>
+    <Link to={"/"}> 
+    <button className=" btn btn_seguir">Seguir comprando...</button>
+    </Link>
+  </>  
   )
 }
 

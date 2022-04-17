@@ -9,7 +9,25 @@ function Cart() {
 
 const {cartList, removeCart, removerItem, precioTotal} = useCartContext ()
  
+const generarOrden = (e) => {
+e.preventDefault();
 
+
+let orden = {}
+
+orden.comprador = { nombre: "Nicole", email: "nicole@gmail.com", telefono: "03414853066"}
+orden.total = precioTotal()
+
+orden.items = cartList.map( itemCarrito => {
+  const id = itemCarrito.id
+  const titulo = itemCarrito.titulo
+  const precio = itemCarrito.precio * itemCarrito.count
+
+  return { id, titulo, precio}
+})
+console.log(orden)
+
+}
 return (
   <div className="block col-1">
     <h2>Mi Carrito</h2>
@@ -43,11 +61,12 @@ return (
               <strong>Total</strong>
             </div>
             <div key={item.id} className="col-1 text-right"> 
-              ${precioTotal() !== 0 && <strong >{precioTotal()}</strong> } {/* hecho en cartcontext*/}
+              ${precioTotal() !== 0 && <strong >{precioTotal()}</strong> } 
             </div>
           </div>
           <hr />
           <button className='btn btn_add' onClick={removeCart}> Vaciar carrito</button>
+          <button className='btn btn_finish' onClick={generarOrden}> Realizar Compra</button>
         </>
         ))
       )}
