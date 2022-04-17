@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import { addDoc, collection, getFirestore} from "firebase/firestore"
 import { useCartContext } from '../context/CartContext'
 import './cartstyle.css'
 
@@ -22,10 +22,22 @@ orden.items = cartList.map( itemCarrito => {
   const id = itemCarrito.id
   const titulo = itemCarrito.titulo
   const precio = itemCarrito.precio * itemCarrito.count
+  const cantidad = itemCarrito.count
 
-  return { id, titulo, precio}
+  return { id, titulo, precio, cantidad}
+
+
 })
-console.log(orden)
+
+
+// creacion de doc en firebase para la orden de compra 
+
+const db = getFirestore ()
+const queryCollection = collection (db, 'ordenes' )
+addDoc( queryCollection, orden)
+.then(({id}) => alert("Este es tu codigo de compra: " + id))
+.catch((err) => console.log(err))
+.finally(removeCart)
 
 }
 return (
