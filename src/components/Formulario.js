@@ -1,12 +1,11 @@
+import  { useState } from 'react'
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
-import React, { useState } from 'react'
 import { useCartContext } from '../context/CartContext';
-
 
 
 const Formulario = () => {
 
-const {cartList, removeCart, precioTotal} = useCartContext ()
+const {listaCarrito, removerCarrito, precioTotal} = useCartContext ()
 
     const generarOrden = (e) => {
         e.preventDefault();
@@ -17,7 +16,7 @@ const {cartList, removeCart, precioTotal} = useCartContext ()
         orden.comprador = dataFormulario
         orden.total = precioTotal()
         
-        orden.items = cartList.map( itemCarrito => {
+        orden.items = listaCarrito.map( itemCarrito => {
           const id = itemCarrito.id
           const titulo = itemCarrito.titulo
           const precio = itemCarrito.precio * itemCarrito.count
@@ -28,15 +27,13 @@ const {cartList, removeCart, precioTotal} = useCartContext ()
         
         })
         
-        
-        // creacion de doc en firebase para la orden de compra 
-        
+
         const db = getFirestore ()
         const queryCollection = collection (db, 'ordenes' )
         addDoc( queryCollection, orden)
         .then(({id}) => alert("Este es tu codigo de compra: " + id))
         .catch((err) => console.log(err))
-        .finally(removeCart)
+        .finally(removerCarrito)
         
         }
 
@@ -60,10 +57,19 @@ const formulario = (event) => {
   return (
     <div>
         <form onSubmit={generarOrden}>
-            <input name='nombre' type="text" placeholder='ingrese el nombre' onChange={formulario} value={dataFormulario.nombre}></input>
-            <input name='email'type="text" placeholder='ingrese el email' onChange={formulario} value={dataFormulario.email}></input>
-            <input name='telefono' type="text" placeholder='ingrese el telefono' onChange={formulario} value={dataFormulario.telefono}></input>
-            <button className='btn btn_finish'> Realizar Compra</button>
+          <input name='nombre' type="text" placeholder='ingrese el nombre' 
+            onChange={formulario} 
+            value={dataFormulario.nombre}/>
+          <input name='email'type="text" placeholder='ingrese el email' 
+            onChange={formulario} 
+            value={dataFormulario.email}/>
+          <input name='telefono' type="text" placeholder='ingrese el telefono' 
+          onChange={formulario} 
+          value={dataFormulario.telefono}/>
+
+          <button className='btn btn_finish'> 
+          Realizar Compra
+          </button>
         </form>
     </div>
   )

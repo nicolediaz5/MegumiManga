@@ -1,8 +1,6 @@
-import '../style.css'
-
 import React from 'react'
 import ItemList from '../ItemList';
-
+import '../style.css'
 
 
 

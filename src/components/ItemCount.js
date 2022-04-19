@@ -1,19 +1,13 @@
-
-
-
 import { useState } from 'react'
 import { Link} from 'react-router-dom'
 import { useCartContext } from '../context/CartContext'
 
 
-
-
-
-const ButtonFinish = () => {
+const BotonTerminar = () => {
   return (
     <> 
     <Link to={"/cart"} >
-      <button className=" btn btn_finish" onClick={() => {(console.log("producto en el carrito"))} }>Terminar compra</button>
+      <button className=" btn btn_finish" onClick={() => {} }>Terminar compra</button>
     </Link>
     <Link to={"/"}> 
     <button className=" btn btn_seguir">Seguir comprando...</button>
@@ -22,15 +16,14 @@ const ButtonFinish = () => {
   )
 }
 
-const ButtonAdd = ({addItem}) =>{
+const BotonAñadir = ({añadirItem}) =>{
 return (
-<button className=" btn btn_add" onClick={addItem}>Añadir al carrito</button>
+<button className=" btn btn_add" onClick={añadirItem}>Añadir al carrito</button>
 )
 }
 
-
 const ItemCount = ({mangaDetalle, count, onAdd}) => {
-    //const count = 1;
+    
     const stock = 10;
     
     const [cantidad, setCantidad] = useState (count);
@@ -40,20 +33,16 @@ const ItemCount = ({mangaDetalle, count, onAdd}) => {
         setCantidad(cantidad + numero);
     };
 
-const [inputFinish, setFinish] = useState ("add")
+const [inputTerminar, setTerminar] = useState ("añadir")
 
 
-const { addToCart} = useCartContext()
+const { añadirAlCarrito} = useCartContext()
     
-const addItem = () => {
-      setFinish("finish")
-      addToCart(mangaDetalle)
+const añadirItem = () => {
+      setTerminar("terminar")
+      añadirAlCarrito(mangaDetalle)
       onAdd(cantidad)
     }
-
-
-
-    
 
   return (
     <div className='d-grid gap-2 d-md-block'>
@@ -63,12 +52,10 @@ const addItem = () => {
   <button className='btn btn_menos' onClick={() => añadirProducto(-1)} disabled={cantidad === count ? true : null}>-</button>
   <br/>  
 
-{
-  inputFinish === "add" ? 
-   <ButtonAdd  addItem={addItem} onAdd={onAdd}/> 
+{ inputTerminar === "añadir" ? 
+   <BotonAñadir  añadirItem={añadirItem} onAdd={onAdd}/> 
    : 
-   <ButtonFinish   />
-
+   <BotonTerminar   />
 }
 </div>
   )

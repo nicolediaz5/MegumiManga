@@ -1,13 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
-
 import './style.css'
 
 
 const Item = (mangas) => {
 
- 
   return (
 
 <div >

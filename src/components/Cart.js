@@ -1,53 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-/*import { addDoc, collection, getFirestore} from "firebase/firestore"*/
 import { useCartContext } from '../context/CartContext'
-import './cartstyle.css'
 import Formulario from './Formulario'
-
+import './cartstyle.css'
 
 function Cart() {
 
-const {cartList, removeCart, removerItem, precioTotal} = useCartContext ()
- /*
-const generarOrden = (e) => {
-e.preventDefault();
+const {listaCarrito, removerCarrito, removerItem, precioTotal} = useCartContext ()
 
 
-let orden = {}
 
-orden.comprador = { nombre: "Nicole", email: "nicole@gmail.com", telefono: "03414853066"}
-orden.total = precioTotal()
-
-orden.items = cartList.map( itemCarrito => {
-  const id = itemCarrito.id
-  const titulo = itemCarrito.titulo
-  const precio = itemCarrito.precio * itemCarrito.count
-  const cantidad = itemCarrito.count
-
-  return { id, titulo, precio, cantidad}
-
-
-})
-
-
-// creacion de doc en firebase para la orden de compra 
-
-const db = getFirestore ()
-const queryCollection = collection (db, 'ordenes' )
-addDoc( queryCollection, orden)
-.then(({id}) => alert("Este es tu codigo de compra: " + id))
-.catch((err) => console.log(err))
-.finally(removeCart)
-
-}*/
 return (
   <div className="block col-1">
     <h2>Mi Carrito</h2>
     <div>
-      {cartList.length === 0 &&  <Link to={"/"}><button className="btn_empty">Carrito vacio... ¡Comience a comprar!</button> </Link>}  
+      {listaCarrito.length === 0 &&  <Link to={"/"}><button className="btn_empty">Carrito vacio... ¡Comience a comprar!</button> </Link>}  
 
-      {cartList.map((item) => (
+      {listaCarrito.map((item) => (
         <div key={item.id} className="row">
           <div className="col-2">{item.titulo}</div>
           <div className="col-2">
@@ -65,8 +34,8 @@ return (
         </div> 
       ))}
 
-{cartList.length !== 0 && (
-        cartList.map((item) => (
+{listaCarrito.length !== 0 && (
+        listaCarrito.map((item) => (
         <>
           <hr></hr> 
           <div  className="row">
@@ -78,8 +47,7 @@ return (
             </div>
           </div>
           <hr />
-          <button className='btn btn_add' onClick={removeCart}> Vaciar carrito</button>
-          {/*<button className='btn btn_finish' onClick={generarOrden}> Realizar Compra</button>*/}
+          <button className='btn btn_add' onClick={removerCarrito}> Vaciar carrito</button>
           <Formulario /> 
         </>
         ))

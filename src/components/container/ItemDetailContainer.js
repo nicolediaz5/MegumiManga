@@ -1,15 +1,10 @@
-import { doc, getDoc, getFirestore} from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { doc, getDoc, getFirestore} from 'firebase/firestore';
 import ItemDetail from '../ItemDetail'
 
 
-
-
-
 function ItemDetailContainer (){ 
-
-
 
 const [producto, setDetalle] = useState ({})
 
@@ -30,35 +25,22 @@ const [cargando, setCargando] = useState (true)
 },[detalleId])
  
   
-
-
-
-
 return (
   
   <> 
           
 { cargando ?    <h2 >Cargando detalles...</h2> :
 <>
-
-              <ItemDetail producto={producto} titulo={producto.titulo} 
+<ItemDetail producto={producto} titulo={producto.titulo} 
               picUrl={producto.picUrl} 
               descrip={producto.descrip} 
               precio={producto.precio}  
-              id={producto.id} />
-
-              {/*<ItemDetail /*producto={producto} titulo={mangaDetalle.titulo} 
-              picUrl={mangaDetalle.picUrl} 
-              descrip={mangaDetalle.descrip} 
-              precio={mangaDetalle.precio}  
-              id={mangaDetalle.id}  />*/}
+              id={producto.id}/>
       
 </>
-
-   }  
-     
+}  
       
-  </>
+</>
 )
 }
 

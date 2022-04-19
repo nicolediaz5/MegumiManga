@@ -6,59 +6,46 @@ import  { createContext, useContext, useState } from 'react'
 
 
 
-function CartContextProvider ({children}){ // componente
-
-const [cartList, setCartList] = useState([]) // estado del carrito 
+function CartContextProvider ({children}){ 
 
 
-const addToCart = (mangaDetalle) => {
+const [listaCarrito, setListaCarrito] = useState([]) 
+
+
+const añadirAlCarrito = (mangaDetalle) => {
     console.log('MANGA DETALLE',mangaDetalle)
    
-    if (cartList.filter((p)=>p.id === mangaDetalle.id).length > 0){
+    if (listaCarrito.filter((p)=>p.id === mangaDetalle.id).length > 0){
         console.log('producto existente en cart')
     } else {
-        setCartList([...cartList, {...mangaDetalle}])
+        setListaCarrito([...listaCarrito, {...mangaDetalle}])
     }
        }
 
 
 const removerItem = (id) => {
-   setCartList(cartList.filter(p => p.id !== id)) 
+    setListaCarrito(listaCarrito.filter(p => p.id !== id)) 
 } 
 
-
-
 const cantTotalItem = () => {
-    return cartList.reduce ((acum, p) => acum += p.count, 0)
+    return listaCarrito.reduce ((acum, p) => acum += p.count, 0)
 }
 
-
-/*
-const addToCart = (mangaDetalle) => {
-    setCartList([
-        ...cartList,
-        mangaDetalle
-    ])
-}
-*/
-
-const removeCart = () => {
-    setCartList([])
+const removerCarrito = () => {
+    setListaCarrito([])
     
 }
 
 
 const precioTotal = () => {
-    return cartList.reduce((acum, p) => acum + ( p.count * p.precio), 0)
+    return listaCarrito.reduce((acum, p) => acum + ( p.count * p.precio), 0)
 }
-
-
 
 return (
     <CartContext.Provider value= {{
-        cartList,
-        addToCart,
-        removeCart,
+        listaCarrito,
+        añadirAlCarrito,
+        removerCarrito,
         removerItem,
         precioTotal,
         cantTotalItem
