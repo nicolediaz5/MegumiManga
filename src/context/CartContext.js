@@ -19,8 +19,7 @@ const addToCart = (mangaDetalle) => {
     } else {
         setCartList([...cartList, {...mangaDetalle}])
     }
-   
-    }
+       }
 
 
 const removerItem = (id) => {

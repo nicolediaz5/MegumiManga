@@ -1,14 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { addDoc, collection, getFirestore} from "firebase/firestore"
+/*import { addDoc, collection, getFirestore} from "firebase/firestore"*/
 import { useCartContext } from '../context/CartContext'
 import './cartstyle.css'
+import Formulario from './Formulario'
 
 
 function Cart() {
 
 const {cartList, removeCart, removerItem, precioTotal} = useCartContext ()
- 
+ /*
 const generarOrden = (e) => {
 e.preventDefault();
 
@@ -39,7 +40,7 @@ addDoc( queryCollection, orden)
 .catch((err) => console.log(err))
 .finally(removeCart)
 
-}
+}*/
 return (
   <div className="block col-1">
     <h2>Mi Carrito</h2>
@@ -78,10 +79,12 @@ return (
           </div>
           <hr />
           <button className='btn btn_add' onClick={removeCart}> Vaciar carrito</button>
-          <button className='btn btn_finish' onClick={generarOrden}> Realizar Compra</button>
+          {/*<button className='btn btn_finish' onClick={generarOrden}> Realizar Compra</button>*/}
+          <Formulario /> 
         </>
         ))
       )}
+      
     </div>
     </div>
   )
