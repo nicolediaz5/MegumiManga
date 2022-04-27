@@ -18,10 +18,10 @@ function validacion (valores) {
   }
 
   if(!valores.emailRep){
-      errores.emailRep = "Repita su correo electronico"
-  }else if(valores.emailRep !== valores.email){
-      errores.emailRep = "Los correos no coinciden"
-  }
+    errores.emailRep = "Email requerido"
+}else if(valores.email !== valores.emailRep){
+    errores.emailRep = "Los email no coinciden"
+}
 
   if(!valores.telefono.trim()){
       errores.telefono = "Escriba un telefono de contacto"
@@ -114,7 +114,9 @@ const formulario = (event) => {
         />
         <br/>
             {erroresFormulario && <strong>{erroresFormulario.email}</strong>}
-       
+      
+            <label>Correo Electronico #2</label>
+        <br/>
         <input 
           name='email'
           type="email" 
@@ -124,7 +126,8 @@ const formulario = (event) => {
         />
         <br/>
             {erroresFormulario && <strong>{erroresFormulario.emailRep}</strong>}
-  
+            <br/>
+
             <label>Telefono de contacto</label>
         <input 
           name='telefono'
