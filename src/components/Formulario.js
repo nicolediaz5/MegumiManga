@@ -19,7 +19,7 @@ function validacion (valores) {
 
   if(!valores.emailRep){
     errores.emailRep = "Email requerido"
-}else if(valores.email !== valores.emailRep){
+}else if(valores.emailRep !== valores.email){
     errores.emailRep = "Los email no coinciden"
 }
 
