@@ -13,10 +13,10 @@ const [listaCarrito, setListaCarrito] = useState([])
 
 
 const añadirAlCarrito = (mangaDetalle) => {
-    console.log('MANGA DETALLE',mangaDetalle)
+    //console.log('MANGA DETALLE',mangaDetalle)
    
     if (listaCarrito.filter((p)=>p.id === mangaDetalle.id).length > 0){
-        console.log('producto existente en cart')
+       // console.log('producto existente en cart')
     } else {
         setListaCarrito([...listaCarrito, {...mangaDetalle}])
     }

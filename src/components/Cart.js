@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useCartContext } from '../context/CartContext'
-import Formulario from './Formulario'
+
 import './cartstyle.css'
+import Formulario from './Formulario'
 
 function Cart() {
 
@@ -43,12 +44,12 @@ return (
               <strong>Total</strong>
             </div>
             <div key={item.id} className="col-1 text-right"> 
-              ${precioTotal() !== 0 && <strong >{precioTotal()}</strong> } 
+             <strong>$</strong>{precioTotal() !== 0 && <strong >{precioTotal()}</strong> } 
             </div>
           </div>
           <hr />
           <button className='btn btn_add' onClick={removerCarrito}> Vaciar carrito</button>
-          <Formulario /> 
+          <Formulario/>
         </>
         ))
       )}

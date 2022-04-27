@@ -11,6 +11,7 @@ import Cart from "./components/Cart";
 
 
 
+
 function App() {
 let greeting = "¡Bienvenidos!"
 let subTit= "En Megumi podés confiar para elegir tu primer manga o seguir con las historias que tanto te gustan. ¡Este es un lugar creado por fanáticos para fanáticos!"
@@ -29,6 +30,7 @@ let subTit= "En Megumi podés confiar para elegir tu primer manga o seguir con l
 <Route path="/detalle/:detalleId" element={<ItemDetailContainer /> }/>
 
 <Route path="/cart" element={ <Cart />}/>
+
       </Routes>
 
 </CartContextProvider>
