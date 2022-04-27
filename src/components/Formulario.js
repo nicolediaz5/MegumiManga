@@ -18,9 +18,9 @@ function validacion (valores) {
   }
 
   if(!valores.emailRep){
-    errores.emailRep = "Email requerido"
+    errores.emailRep = "Repita su correo electronico"
 }else if(valores.emailRep !== valores.email){
-    errores.emailRep = "Los email no coinciden"
+    errores.emailRep = "Los correos no coinciden"
 }
 
   if(!valores.telefono.trim()){
