@@ -1,6 +1,8 @@
 import  { useState } from 'react'
 import { addDoc, collection, getFirestore } from 'firebase/firestore';
-import { useCartContext } from '../context/CartContext';
+import { useCartContext } from '../../context/CartContext';
+import './formulario.css'
+
 
 function validacion (valores) {
 
@@ -16,12 +18,12 @@ function validacion (valores) {
   }else if(!expresionesRegulares.test(valores.email)){
       errores.email = "Escriba un correo válido"
   }
-
+/*
   if(!valores.emailRep){
     errores.emailRep = "Repita su correo electronico"
 }else if(valores.emailRep !== valores.email){
     errores.emailRep = "Los correos no coinciden"
-}
+}*/
 
   if(!valores.telefono.trim()){
       errores.telefono = "Escriba un telefono de contacto"
@@ -32,42 +34,41 @@ function validacion (valores) {
 
 const Formulario = () => {
 
-
-
 const {listaCarrito, removerCarrito, precioTotal} = useCartContext ()
-
 const [dataFormulario, setDataFormulario] = useState({
 
     nombre:"",
     email:"",
     telefono:""
+
 })
 
 const [erroresFormulario,setErrores] = useState({})
-
 const [validacionCorrecta, setValido] = useState (false)
 
     const generarOrden = (e) => {
+
         e.preventDefault();
         setErrores(validacion(dataFormulario))
         setValido(true)
 
         let orden = {}
-        
+    
         orden.comprador = dataFormulario
         orden.total = precioTotal()
         
         orden.items = listaCarrito.map( itemCarrito => {
+
           const id = itemCarrito.id
           const titulo = itemCarrito.titulo
           const precio = itemCarrito.precio * itemCarrito.count
           const cantidad = itemCarrito.count
         
           return { id, titulo, precio, cantidad}
-        
-        
-        })
 
+         })
+        
+       
       if (Object.keys(erroresFormulario).length === 0 && validacionCorrecta) { 
 
         const db = getFirestore ()
@@ -89,8 +90,7 @@ const formulario = (event) => {
 
   return (
     <div>
-        <form onSubmit={generarOrden}>
-          
+        <form onSubmit={generarOrden}>          
           <label>Nombre y Apellido</label>
        <br/>
         <input 
@@ -101,8 +101,10 @@ const formulario = (event) => {
           value={dataFormulario.nombre}
         />
         <br/>
-           {erroresFormulario && <strong>{erroresFormulario.nombre}</strong>}
-
+           {erroresFormulario && 
+           <strong className='estiloError form-text'>
+            {erroresFormulario.nombre}</strong>}
+           <br/>
             <label>Correo Electronico</label>
         <br/>
         <input 
@@ -113,9 +115,11 @@ const formulario = (event) => {
           value={dataFormulario.email}
         />
         <br/>
-            {erroresFormulario && <strong>{erroresFormulario.email}</strong>}
-      
-            <label>Correo Electronico #2</label>
+            {erroresFormulario && 
+            <strong className='estiloError form-text'>
+            {erroresFormulario.email}</strong>}
+            <br/>
+           {/* <label>Correo Electronico #2</label>
         <br/>
         <input 
           name='email'
@@ -125,10 +129,9 @@ const formulario = (event) => {
           value={dataFormulario.emailRep}
         />
         <br/>
-            {erroresFormulario && <strong>{erroresFormulario.emailRep}</strong>}
-            <br/>
-
-            <label>Telefono de contacto</label>
+            {erroresFormulario && <strong className='estiloError form-text'>{erroresFormulario.emailRep}</strong>}
+           <br/> */}
+            <label >Telefono de contacto</label>
             <br/>
         <input 
           name='telefono'
@@ -138,10 +141,13 @@ const formulario = (event) => {
           value={dataFormulario.telefono}
         />
         <br/>
-            {erroresFormulario && <strong>{erroresFormulario.telefono}</strong>}
+            {erroresFormulario && 
+            <strong className='estiloError form-text '>
+            {erroresFormulario.telefono}</strong>}
           <hr/>          
-<button type='submit' className='btn btn_finish'>Generar compra</button>
-           
+     <button type='submit' className='btn btn_finish'>
+            Generar compra
+      </button>
         </form>
     </div>
   )

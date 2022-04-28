@@ -6,7 +6,7 @@ import ItemListConteiner from './components/container/ItemListConteiner';
 import './App.css';
 import ItemDetailContainer from "./components/container/ItemDetailContainer";
 import CartContextProvider from "./context/CartContext";
-import Cart from "./components/Cart";
+import Cart from "./components/CarpetaCart/Cart";
 
 
 
