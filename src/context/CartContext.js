@@ -1,20 +1,15 @@
 import  { createContext, useContext, useState } from 'react'
 
   const CartContext = createContext([])
-
   export const useCartContext =() => useContext(CartContext)
 
 
 
 function CartContextProvider ({children}){ 
 
-
 const [listaCarrito, setListaCarrito] = useState([]) 
-
-
 const añadirAlCarrito = (mangaDetalle) => {
-    
-   
+
     if (listaCarrito.filter((p)=>p.id === mangaDetalle.id).length > 0){
        
     } else {
