@@ -1,12 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar';
 import ItemListConteiner from './components/container/ItemListConteiner';
-
-import './App.css';
 import ItemDetailContainer from "./components/container/ItemDetailContainer";
 import CartContextProvider from "./context/CartContext";
 import Cart from "./components/CarpetaCart/Cart";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+
+
 
 
 
