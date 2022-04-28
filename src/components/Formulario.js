@@ -129,6 +129,7 @@ const formulario = (event) => {
             <br/>
 
             <label>Telefono de contacto</label>
+            <br/>
         <input 
           name='telefono'
           type="tel"

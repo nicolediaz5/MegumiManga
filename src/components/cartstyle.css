@@ -15,7 +15,7 @@ a {
 }
 .row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .row.center {
   align-items: center;
@@ -27,11 +27,13 @@ a {
   flex: 2;
 }
 .block {
+justify-content: center;
   background-color: #e0e0e0;
   padding: 1rem;
-  margin: 0.5rem;
+  margin-left: 700px;
+  margin-top: 50px;
   border-radius: 0.5rem;
-  width: 300px;
+  width: 500px;
 }
 .text-right {
   text-align: right;

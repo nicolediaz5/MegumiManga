@@ -25,8 +25,8 @@ function NavBar() {
   
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <NavLink to={"categoria/shonen"}>Shonen</NavLink>
-      <NavLink to={"categoria/seinen"}>Seinen</NavLink>
+      <NavLink to={"categoria/shonen"} className="shonen">Shonen</NavLink>
+      <NavLink to={"categoria/seinen"}className="seinen">Seinen</NavLink>
       
       
     </Nav>

@@ -3,6 +3,25 @@
 .styleNav{
     background-color: rgb(255, 115, 0);
   }
+.shonen {
+  color: white;
+  margin: 5px 10px 5px 5px;
+  font-size: x-large;
+  font-style: bold;
+  font-family: 'Francois One', sans-serif;
+}
+.seinen {
+  color: white;
+  margin: 5px 5px 5px 10px;
+  font-size: x-large;
+  font-style: bold;
+  font-family: 'Francois One', sans-serif;
+}
+
+.seinen:hover, .shonen:hover {
+  color: #276b30;
+}
+
 
 .logostyle{
   width: 150px;
@@ -10,17 +29,15 @@
 }
 
   .tituloPag{
-    color: "#ce6402";
+    color: rgb(255, 115, 0);
     text-align: "center";
-    text-transform: "uppercase";
+    font-size: xx-large;
     padding-top: 30px;
-    font-style: "bold";
-    background-color: "#ffffff";
-    margin-top: "150px"
+        margin-top: "150px"
   }
   
   .subPag{
-    color: "#ce6402";
+    color: #276b30;
     text-align: "center";
     padding-top: 15px;
     padding-bottom: 50px;
@@ -28,6 +45,15 @@
     background-color: "#ffffff";
     margin-top: "20px"
   }
+.tituloProd{
+  color: rgb(199, 98, 3);
+    text-align: "center";
+    font-size: xx-large;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Secular One', sans-serif;
+    
+}
 
   h2{
     text-align: center;
@@ -36,10 +62,10 @@
   }
 
   .bi-cart4 {
-    width: 18px;
-    height: 18px;
+    width: 25px;
+    height: 25px;
+    color: #276b30;
   }
-
 
   /*Estilo botones*/
 
@@ -96,8 +122,6 @@ margin: 5px;
     color: white;
   }
 
- 
-
   /*Body Mangas*/
   .card{
     width: 230px;
@@ -111,9 +135,11 @@ margin: 5px;
 }
   
 
-p{
+.precioItem{
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+  color: #276b30;
 }
 h5{
   text-align: center;
@@ -137,18 +163,51 @@ h5{
 
 }
 /*ItemDetail*/
-.contenedorDetalle{
- align-self: center;
- padding-top: 15px;
- padding-bottom: 50px;
-}
 
+.hrDetalle {
+  margin-top: 50px;
+}
+.contenedorDetalle{
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+margin-right: 5em;
+margin-top: 5em;
+}
+.imgDetalle{
+  width: 250px !important;
+  height: 350px !important;
+  margin-left:25px ;
+  border-image: round;
+  border-radius: 0.5rem;
+}
 
 .cardDetalle{
- width: 520px;
- 
+  justify-items: center;
+ width: 500px;
+ }
 
+ .card{
+  border-image: round;
+  border-radius: 0.5rem;
+ }
+
+.row {
+  display: flex !important;
+  justify-content: center !important;
 }
+
+.card-subtitle{
+padding-top: 0.5rem;
+padding-bottom: 0.5rem;
+color: #276b30;
+font-size: large;
+}
+
+.card-title {
+  font-size: xx-large;
+}
+
 
 .btn_add2{
   background-color: white;
@@ -168,20 +227,7 @@ h5{
 }
 
 
-.card-body2{
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding-top: 10px;
-  padding-bottom: 15px;
-  padding-left: 10px;
-padding-right: 10px;
 
-}
-
-.imgDetalle{
-  width: 518px !important;
-}
 
 
 .btn_finish{

@@ -13,7 +13,7 @@ import Cart from "./components/Cart";
 
 
 function App() {
-let greeting = "¡Bienvenidos!"
+let greeting = "¡Bienvenidxs!"
 let subTit= "En Megumi podés confiar para elegir tu primer manga o seguir con las historias que tanto te gustan. ¡Este es un lugar creado por fanáticos para fanáticos!"
   
  return (

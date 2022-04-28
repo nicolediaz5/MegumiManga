@@ -11,8 +11,9 @@ function ItemListConteiner(props) {
     <div className="saludo">
 <h1 className='tituloPag'> {tituloProps} </h1>
 <h6 className='subPag'> {subProps} </h6>
-
-
+<hr></hr>
+<h1 className='tituloProd'>M A N G A S</h1>
+<hr></hr>
 <ItemList />
 
     </div>

@@ -12,7 +12,7 @@ const {listaCarrito, removerCarrito, removerItem, precioTotal} = useCartContext 
 
 
 return (
-  <div className="block col-1">
+  <div className="block col-10">
     <h2>Mi Carrito</h2>
     <div>
       {listaCarrito.length === 0 &&  <Link to={"/"}><button className="btn_empty">Carrito vacio... ¡Comience a comprar!</button> </Link>}  
@@ -49,6 +49,9 @@ return (
           </div>
           <hr />
           <button className='btn btn_add' onClick={removerCarrito}> Vaciar carrito</button>
+          <Link to={"/"}> 
+    <button className=" btn btn_seguir">Seguir comprando...</button>
+    </Link>
           <Formulario/>
         </>
         ))
