@@ -80,9 +80,10 @@ const formulario = (event) => {
   return (
     <div>
         <form onSubmit={generarOrden}>          
-          <label>Nombre y Apellido</label>
+          <label className='tituloLabel'>Nombre y Apellido</label>
        <br/>
         <input 
+          className='form-control' 
           name='nombre' 
           type="text" 
           placeholder='Juan Carlos' 
@@ -94,9 +95,10 @@ const formulario = (event) => {
            <strong className='estiloError form-text'>
             {erroresFormulario.nombre}</strong>}
            <br/>
-            <label>Correo Electronico</label>
+            <label className='tituloLabel'>Correo Electronico</label>
         <br/>
         <input 
+          className='form-control'        
           name='email'
           type="email" 
           placeholder='Ej.: juan@gmail.com' 
@@ -108,9 +110,10 @@ const formulario = (event) => {
             <strong className='estiloError form-text'>
             {erroresFormulario.email}</strong>}
             <br/>
-            <label >Telefono de contacto</label>
+            <label className='tituloLabel'>Telefono de contacto</label>
             <br/>
         <input 
+          className='form-control' 
           name='telefono'
           type="tel"
           placeholder='Contacto' 

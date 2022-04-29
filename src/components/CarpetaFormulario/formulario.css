@@ -1,3 +1,9 @@
 .estiloError {
-color: red;
+color: red !important;
+}
+
+.tituloLabel{
+    padding-bottom: 10px;
+    font-family: 'Radio Canada', sans-serif;
+    color: #276b30 ;
 }

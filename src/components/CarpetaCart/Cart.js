@@ -21,7 +21,7 @@ return (
 
 {listaCarrito.map((item) => (
         <div key={item.id} className="row">
-          <div className="col-2">{item.titulo}</div>
+          <div className="col-4">{item.titulo}</div>
           <div className="col-2">
             <button 
             onClick={ () => removerItem(item.id)} 
@@ -31,7 +31,7 @@ return (
            </svg>       
            </button>
           </div>
-          <div className="col-2 text-right">
+          <div className="col-4 text-right">
             {item.count} x ${item.precio}
           </div>
         </div> 
