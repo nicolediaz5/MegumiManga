@@ -1,8 +1,5 @@
-import React from 'react'
 import ItemList from '../ItemList';
 import '../style.css'
-
-
 
 function ItemListConteiner(props) {
 
@@ -21,6 +18,5 @@ function ItemListConteiner(props) {
   );
 
 }
-
 
 export default  ItemListConteiner

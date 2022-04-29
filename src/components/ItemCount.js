@@ -2,15 +2,18 @@ import { useState } from 'react'
 import { Link} from 'react-router-dom'
 import { useCartContext } from '../context/CartContext'
 
-
 const BotonTerminar = () => {
   return (
     <> 
     <Link to={"/cart"} >
-      <button className=" btn btn_finish" onClick={() => {} }>Terminar compra</button>
+      <button className=" btn btn_finish" onClick={() => {} }>
+        Terminar compra
+        </button>
     </Link>
     <Link to={"/"}> 
-    <button className=" btn btn_seguir">Seguir comprando...</button>
+    <button className=" btn btn_seguir">
+      Seguir comprando...
+      </button>
     </Link>
   </>  
   )
@@ -18,7 +21,9 @@ const BotonTerminar = () => {
 
 const BotonAñadir = ({añadirItem}) =>{
 return (
-<button className=" btn btn_add" onClick={añadirItem}>Añadir al carrito</button>
+<button className=" btn btn_add" onClick={añadirItem}>
+  Añadir al carrito
+  </button>
 )
 }
 

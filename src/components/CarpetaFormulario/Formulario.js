@@ -3,7 +3,6 @@ import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import { useCartContext } from '../../context/CartContext';
 import './formulario.css'
 
-
 function validacion (valores) {
 
   let errores = {};
@@ -33,7 +32,6 @@ const [dataFormulario, setDataFormulario] = useState({
     telefono:""
 
 })
-
 const [erroresFormulario,setErrores] = useState({})
 const [validacionCorrecta, setValido] = useState (false)
 

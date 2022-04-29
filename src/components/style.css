@@ -1,25 +1,24 @@
-/*Nuevos estilos*/
-
 .styleNav{
     background-color: rgb(255, 115, 0);
   }
 .shonen {
-  color: white;
-  margin: 5px 10px 5px 5px;
-  font-size: x-large;
-  font-style: bold;
-  font-family: 'Francois One', sans-serif;
+  color: white !important;
+  margin: 5px 10px 5px 5px !important;
+  font-size: x-large !important;
+  font-style: bold !important;
+  font-family: 'Francois One', sans-serif !important;
 }
 .seinen {
-  color: white;
-  margin: 5px 5px 5px 10px;
-  font-size: x-large;
-  font-style: bold;
-  font-family: 'Francois One', sans-serif;
+  color: white !important;
+  margin: 5px 5px 5px 10px !important;
+  font-size: x-large !important;
+  font-style: bold !important;
+  font-family: 'Francois One', sans-serif !important;
+  border-style: none !important;
 }
 
 .seinen:hover, .shonen:hover {
-  color: #276b30;
+  color: #276b30 !important;
 }
 
 
@@ -70,28 +69,28 @@
   /*Estilo botones*/
 
   .btn_menos , .btn_mas{
-    background-color: rgb(255, 115, 0);
-    border-color: rgb(255, 115, 0);
-    border-radius: 0.3rem;
-    box-shadow: none;
-    height: 30px;
-    width: 30px;
-    text-align: center;
-    font-size: 10px;
-    color: white;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(255, 115, 0) !important;
+    border-color: rgb(255, 115, 0) !important;
+    border-radius: 0.3rem !important;
+    box-shadow: none !important;
+    height: 30px !important;
+    width: 30px !important;
+    text-align: center !important;
+    font-size: 10px !important;
+    color: white !important;
+    font-family:Verdana, Geneva, Tahoma, sans-serif !important;
   }
   .btn_menos:hover {
-    background-color: white;
-    border-color: rgb(255, 115, 0);
-    color: rgb(255, 115, 0);
+    background-color: white !important;
+    border-color: rgb(255, 115, 0) !important;
+    color: rgb(255, 115, 0) !important;
   }
 
 
   .btn_mas:hover {
-    background-color: white;
-    border-color: rgb(255, 115, 0);
-    color: rgb(255, 115, 0);
+    background-color: white !important;
+    border-color: rgb(255, 115, 0) !important;
+    color: rgb(255, 115, 0) !important;
   }
 
 
@@ -104,22 +103,22 @@ margin: 5px;
   }
 
   .btn_add{
-    background-color: white;
-    border-color: rgb(255, 115, 0);
-    width: 150px;
-    height: 35px;
-    border-radius: 0.9rem;
-    box-shadow: none;
-    text-align: center;
-    font-size: 15px;
-    color: rgb(255, 115, 0);
+    background-color: white !important;
+    border-color: rgb(255, 115, 0) !important;
+    width: 150px !important;
+    height: 35px !important;
+    border-radius: 0.9rem !important;
+    box-shadow: none !important;
+    text-align: center !important;
+    font-size: 15px !important;
+    color: rgb(255, 115, 0) !important;
     
   }
 
   .btn_add:hover {
-    background-color: rgb(255, 115, 0);
-    border-color: rgb(255, 115, 0);
-    color: white;
+    background-color: rgb(255, 115, 0) !important;
+    border-color: rgb(255, 115, 0) !important;
+    color: white !important;
   }
 
   /*Body Mangas*/
@@ -210,68 +209,64 @@ font-size: large;
 
 
 .btn_add2{
-  background-color: white;
-    border-color: rgb(255, 115, 0);
-    width: 150px;
-    height: 35px;
-    border-radius: 0.9rem;
-    box-shadow: none;
-    text-align: center;
-    font-size: 15px;
+  background-color: white !important;
+    border-color: rgb(255, 115, 0) !important;
+    width: 150px !important;
+    height: 35px !important;
+    border-radius: 0.9rem !important;
+    box-shadow: none !important;
+    text-align: center !important;
+    font-size: 15px !important;
     color: rgb(255, 115, 0);
 }
 .btn_add2:hover {
-  background-color: rgb(255, 115, 0);
-  border-color: rgb(255, 115, 0);
-  color: white;
+  background-color: rgb(255, 115, 0) !important;
+  border-color: rgb(255, 115, 0) !important;
+  color: white !important;
 }
 
-
-
-
-
 .btn_finish{
-  background-color: rgb(255, 115, 0);
-    border-color: rgb(255, 115, 0);
-    border-radius: 0.9rem;
-    box-shadow: none;
-    height: 35px;
-    width: 170px;
-    text-align: center;
-    font-size: 15px;
-    color: white;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(255, 115, 0) !important;
+    border-color: rgb(255, 115, 0) !important;
+    border-radius: 0.9rem !important;
+    box-shadow: none !important;
+    height: 35px !important;
+    width: 170px !important;
+    text-align: center !important;
+    font-size: 15px !important;
+    color: white !important;
+    font-family:Verdana, Geneva, Tahoma, sans-serif !important;
 }
 
 .btn_empty{
-  background-color: rgb(255, 115, 0);
-    border-color: rgb(255, 115, 0);
-    border-radius: 0.9rem;
-    box-shadow: none;
-    height: 60px;
-    width: 200px;
-    margin-top: 0.5rem;
-    text-align: center;
-    font-size: 15px;
-    color: white;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(255, 115, 0) !important;
+    border-color: rgb(255, 115, 0) !important;
+    border-radius: 0.9rem !important;
+    box-shadow: none !important;
+    height: 60px !important;
+    width: 200px !important;
+    margin-top: 0.5rem !important;
+    text-align: center !important;
+    font-size: 15px !important;
+    color: white !important;
+    font-family:Verdana, Geneva, Tahoma, sans-serif !important;
   
 }
 
 .btn_empty:hover {
-  background-color: white;
-  border-color: rgb(255, 115, 0);
-  color: rgb(255, 115, 0);
+  background-color: white !important;
+  border-color: rgb(255, 115, 0) !important;
+  color: rgb(255, 115, 0) !important;
 }
 
 .btn_seguir{
-  background-color: white;
-    border-color: rgb(255, 115, 0);
-    width: 180px;
-    height: 35px;
-    border-radius: 0.9rem;
-    box-shadow: none;
-    text-align: center;
-    font-size: 15px;
-    color: rgb(255, 115, 0);
+  background-color: white !important;
+    border-color: rgb(255, 115, 0) !important;
+    width: 180px !important;
+    height: 35px !important;
+    border-radius: 0.9rem !important;
+    box-shadow: none !important;
+    text-align: center !important;
+    font-size: 15px !important;
+    color: rgb(255, 115, 0) !important;
 }

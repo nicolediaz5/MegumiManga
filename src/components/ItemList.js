@@ -1,26 +1,18 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react';
+import { useEffect, useState  } from 'react'
 import { useParams } from 'react-router-dom';
-import Item from './Item';
 import { query, collection, getDocs, getFirestore, where} from "firebase/firestore"
-
+import Item from './Item';
 
 function ItemList (){ 
 
- 
+const [cargando, setCargando] = useState (true)
+const { categoriaId } = useParams ()
+const [productos, setProductos] = useState ([])
 
-
- const [cargando, setCargando] = useState (true)
-
- const { categoriaId } = useParams ()
-
-
-  const [productos, setProductos] = useState ([])
-
- useEffect (() => {
+useEffect (() => {
 const querydb = getFirestore()
-
 const queryCollection = collection(querydb, 'productos')
+
 if (categoriaId){
 const queryFilter = query (queryCollection, where('categoria', '==', categoriaId))
 
@@ -37,17 +29,11 @@ getDocs(queryCollection)
 }}
 ,[categoriaId])
 
-
-
-
-
-
-  return (
-    
+  return ( 
     <> 
-        { cargando ? <h2 >Cargando productos...</h2> : 
+ { cargando ? <h2 >Cargando productos...</h2> : 
 
-<div className='contenedor' >
+<div className='contenedor'>
  {productos.map((prod) => {
             return (
                 <Item  key={prod.id} 
@@ -56,17 +42,13 @@ getDocs(queryCollection)
                 picUrl={prod.picUrl} 
                 id={prod.id} 
                 categoria={prod.categoria}
-                productos={productos}/>
-                
+                productos={productos}/>  
             )
         }
-
         )
       }
-</div>
-        
-       
-        }
+</div>       
+     }
 
     </>
   )
