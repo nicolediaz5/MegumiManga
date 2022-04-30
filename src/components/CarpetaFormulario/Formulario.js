@@ -3,23 +3,24 @@ import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import { useCartContext } from '../../context/CartContext';
 import './formulario.css'
 
-function validacion (valores) {
+function validacion (datosUsuario) {
 
-  let errores = {};
+  let invalido = {};
   const expresionesRegulares = /[a-z0-9]+@[a-z0-9-]+(\.[a-z0-9]+){1,2}/
 
-  if(!valores.nombre.trim()){
-      errores.nombre = "Escriba su nombre y apellido"
+  if(!datosUsuario.nombre.trim()){
+      invalido.nombre = "Escriba su nombre y apellido"
   }
-  if(!valores.email){
-      errores.email = "Escriba su correo electronico"
-  }else if(!expresionesRegulares.test(valores.email)){
-      errores.email = "Escriba un correo válido"
+  if(!datosUsuario.email){
+      invalido.email = "Escriba su correo electronico"
+  }else if(!expresionesRegulares.test(datosUsuario.email)){
+      invalido.email = "Escriba un correo válido"
   }
-  if(!valores.telefono.trim()){
-      errores.telefono = "Escriba un telefono de contacto"
+  if(!datosUsuario.telefono.trim()){
+      invalido.telefono = "Escriba un telefono de contacto"
   }
-  return errores;
+
+  return invalido;
 }
 
 const Formulario = () => {
@@ -32,13 +33,13 @@ const [dataFormulario, setDataFormulario] = useState({
     telefono:""
 
 })
-const [erroresFormulario,setErrores] = useState({})
+const [invalidoFormulario,setinvalido] = useState({})
 const [validacionCorrecta, setValido] = useState (false)
 
     const generarOrden = (e) => {
 
         e.preventDefault();
-        setErrores(validacion(dataFormulario))
+        setinvalido(validacion(dataFormulario))
         setValido(true)
 
         let orden = {}
@@ -58,7 +59,7 @@ const [validacionCorrecta, setValido] = useState (false)
          })
         
        
-      if (Object.keys(erroresFormulario).length === 0 && validacionCorrecta) { 
+      if (Object.keys(invalidoFormulario).length === 0 && validacionCorrecta) { 
 
         const db = getFirestore ()
         const queryCollection = collection (db, 'ordenes' )
@@ -90,10 +91,10 @@ const formulario = (event) => {
           onChange={formulario}
           value={dataFormulario.nombre}
         />
-        <br/>
-           {erroresFormulario && 
+
+           {invalidoFormulario && 
            <strong className='estiloError form-text'>
-            {erroresFormulario.nombre}</strong>}
+            {invalidoFormulario.nombre}</strong>}
            <br/>
             <label className='tituloLabel'>Correo Electronico</label>
         <br/>
@@ -105,10 +106,9 @@ const formulario = (event) => {
           onChange={formulario}
           value={dataFormulario.email}
         />
-        <br/>
-            {erroresFormulario && 
+            {invalidoFormulario && 
             <strong className='estiloError form-text'>
-            {erroresFormulario.email}</strong>}
+            {invalidoFormulario.email}</strong>}
             <br/>
             <label className='tituloLabel'>Telefono de contacto</label>
             <br/>
@@ -120,10 +120,9 @@ const formulario = (event) => {
           onChange={formulario} 
           value={dataFormulario.telefono}
         />
-        <br/>
-            {erroresFormulario && 
+            {invalidoFormulario && 
             <strong className='estiloError form-text '>
-            {erroresFormulario.telefono}</strong>}
+            {invalidoFormulario.telefono}</strong>}
           <hr/>          
      <button type='submit' className='btn btn_finish'>
             Generar compra

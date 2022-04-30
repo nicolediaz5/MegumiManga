@@ -11,10 +11,8 @@ function ItemListConteiner(props) {
 <hr></hr>
 <h1 className='tituloProd'>M A N G A S</h1>
 <hr></hr>
-<ItemList />
-
-    </div>
-    
+<ItemList/>
+</div>
   );
 
 }

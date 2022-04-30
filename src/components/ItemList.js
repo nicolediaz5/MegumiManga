@@ -12,22 +12,13 @@ const [productos, setProductos] = useState ([])
 useEffect (() => {
 const querydb = getFirestore()
 const queryCollection = collection(querydb, 'productos')
-
-if (categoriaId){
-const queryFilter = query (queryCollection, where('categoria', '==', categoriaId))
+const queryFilter = categoriaId ? query (queryCollection, where('categoria', '==', categoriaId)) : queryCollection
 
 getDocs(queryFilter)
 .then(resp => setProductos(resp.docs.map(item => ({ id: item.id, ...item.data() }) ) ) )
 .catch(err => console.log(err))
 .finally(()=> setCargando (false))
-} 
-else {
-getDocs(queryCollection)
-.then(resp => setProductos(resp.docs.map(item => ({ id: item.id, ...item.data() }) ) ) )
-.catch(err => console.log(err))
-.finally(()=> setCargando (false))
-}}
-,[categoriaId])
+},[categoriaId])
 
   return ( 
     <> 

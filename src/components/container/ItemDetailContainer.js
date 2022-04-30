@@ -7,12 +7,9 @@ import ItemDetail from '../ItemDetail'
 function ItemDetailContainer (){ 
 
 const [producto, setDetalle] = useState ({})
-
 const [cargando, setCargando] = useState (true)
 
-
- const { detalleId } = useParams ()
-
+const { detalleId } = useParams ()
 
  useEffect(() =>{
   const querydb = getFirestore()
@@ -24,22 +21,18 @@ const [cargando, setCargando] = useState (true)
   .finally(() => setCargando(false))
 },[detalleId])
  
-  
-return (
-  
-  <> 
-          
+ return (
+     <>        
 { cargando ?    <h2 >Cargando detalles...</h2> :
 <>
-<ItemDetail producto={producto} titulo={producto.titulo} 
-              picUrl={producto.picUrl} 
-              descrip={producto.descrip} 
-              precio={producto.precio}  
-              id={producto.id}/>
-      
+<ItemDetail producto={producto}
+            titulo={producto.titulo} 
+            picUrl={producto.picUrl} 
+            descrip={producto.descrip} 
+            precio={producto.precio}  
+            id={producto.id}/>      
 </>
-}  
-      
+}    
 </>
 )
 }

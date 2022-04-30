@@ -7,12 +7,6 @@ import Cart from "./components/CarpetaCart/Cart";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-
-
-
-
-
-
 function App() {
 let greeting = "¡Bienvenidxs!"
 let subTit= "En Megumi podés confiar para elegir tu primer manga o seguir con las historias que tanto te gustan. ¡Este es un lugar creado por fanáticos para fanáticos!"
@@ -20,26 +14,18 @@ let subTit= "En Megumi podés confiar para elegir tu primer manga o seguir con l
  return (
     <div className="App">
 <BrowserRouter>
-
-<CartContextProvider>
-
+ <CartContextProvider>
      <NavBar/>
-     
-     <Routes>
-     <Route path="/" element={<ItemListConteiner tituloProps= { greeting } subProps= { subTit } /> }/>
+    <Routes>
+       <Route path="/" element={<ItemListConteiner tituloProps= { greeting } subProps= { subTit } /> }/>
        <Route path="/categoria/:categoriaId" element={<ItemListConteiner tituloProps= { greeting } subProps= { subTit } /> }/>
-<Route path="/detalle/:detalleId" element={<ItemDetailContainer /> }/>
-
-<Route path="/cart" element={ <Cart />}/>
-
-      </Routes>
-
-</CartContextProvider>
-
+       <Route path="/detalle/:detalleId" element={<ItemDetailContainer /> }/>
+       <Route path="/cart" element={ <Cart />}/>
+    </Routes>
+ </CartContextProvider>
 </BrowserRouter>
 
     </div>
   );
 }
-
 export default App;
