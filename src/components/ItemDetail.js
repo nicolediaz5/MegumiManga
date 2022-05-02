@@ -18,7 +18,7 @@ return (
 <hr></hr>
 
     <div className='contenedorDetalle'>     
-<div className="card mb-3 cardDetalle " style={{maxWidth: '600px'}}>
+<div className="card mb-3 cardDetalle" style={{maxWidth: '600px'}}>
   <div className="row">
     <div className="col-md-4">
       <img src={mangaDetalle.picUrl} className="imgDetalle" alt=""/>
@@ -26,9 +26,15 @@ return (
 
     <div className="col-md-8 ">
       <div className="card-body" >
-        <h5 className="card-title">{mangaDetalle.titulo}</h5>
-        <h6 className="card-subtitle">${mangaDetalle.precio}</h6>
-        <p className="card-text">{mangaDetalle.descrip}</p>
+        <h5 className="card-title">
+          {mangaDetalle.titulo}
+        </h5>
+        <h6 className="card-subtitle">
+          ${mangaDetalle.precio}
+        </h6>
+        <p className="card-text">
+          {mangaDetalle.descrip}
+        </p>
 
         <ItemCount count={1}
         stock={10}

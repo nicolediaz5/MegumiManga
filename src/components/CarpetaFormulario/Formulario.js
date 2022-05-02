@@ -12,12 +12,12 @@ function validacion (datosUsuario) {
       invalido.nombre = "Escriba su nombre y apellido"
   }
   if(!datosUsuario.email){
-      invalido.email = "Escriba su correo electronico"
+      invalido.email = "Escriba su correo electrónico"
   }else if(!expresionesRegulares.test(datosUsuario.email)){
       invalido.email = "Escriba un correo válido"
   }
   if(!datosUsuario.telefono.trim()){
-      invalido.telefono = "Escriba un telefono de contacto"
+      invalido.telefono = "Escriba un teléfono de contacto"
   }
 
   return invalido;
@@ -96,7 +96,7 @@ const formulario = (event) => {
            <strong className='estiloError form-text'>
             {invalidoFormulario.nombre}</strong>}
            <br/>
-            <label className='tituloLabel'>Correo Electronico</label>
+            <label className='tituloLabel'>Correo Electrónico</label>
         <br/>
         <input 
           className='form-control'        
@@ -110,7 +110,7 @@ const formulario = (event) => {
             <strong className='estiloError form-text'>
             {invalidoFormulario.email}</strong>}
             <br/>
-            <label className='tituloLabel'>Telefono de contacto</label>
+            <label className='tituloLabel'>Teléfono de contacto</label>
             <br/>
         <input 
           className='form-control' 

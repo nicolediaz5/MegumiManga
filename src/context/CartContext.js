@@ -37,7 +37,8 @@ const precioTotal = () => {
 }
 
 return (
-    <CartContext.Provider value= {{
+    <CartContext.Provider 
+    value= {{
         listaCarrito,
         añadirAlCarrito,
         removerCarrito,
